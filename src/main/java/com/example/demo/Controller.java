@@ -3,6 +3,8 @@ package com.example.demo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -20,16 +22,12 @@ public class Controller {
     @Autowired
     private GirlRepository repository;
 
-    @GetMapping(path = "/girls", params = {"page", "size"})
-    public Page<Girl> findAll(@RequestParam(value = "page", required = false) Integer page,
-                              @RequestParam(value = "size", required = false) Integer size) {
-        if (page == null)
-            page = 0;
-        if (size == null)
-            size = 10;
+    @GetMapping(path = "/girls")
+    public Page<Girl> findAll(@PageableDefault Pageable pageable) {
 
-        return repository.findAll(PageRequest.of(page, size)).map(this::mapSimple);
+        return repository.findAll(pageable).map(this::mapSimple);
     }
+
 
     @GetMapping(path = "/girls/{id}")
     public Girl findOne(@PathVariable("id") String id) throws IOException {
