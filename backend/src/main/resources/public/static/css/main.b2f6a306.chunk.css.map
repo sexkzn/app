@@ -1,0 +1,1 @@
+{"version":3,"sources":["app.css"],"names":[],"mappings":"AAAA,oCAEI,oBAAqB,CACrB,UACJ,CAEA,IACI,UAAW,CACX,WACJ","file":"main.b2f6a306.chunk.css","sourcesContent":[".no-decoration,\r\n.no-decoration:hover {\r\n    text-decoration: none;\r\n    color: #000;\r\n}\r\n\r\nimg {\r\n    width: 100%;\r\n    height: auto;\r\n}\r\n"]}
