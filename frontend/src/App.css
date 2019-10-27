@@ -8,3 +8,18 @@ img {
     width: 100%;
     height: auto;
 }
+
+img.card__img {
+    width: 50%;
+    align-self: center;
+}
+
+.blured-text {
+    text-shadow: 0 0 7px black;
+    color: transparent;
+}
+
+.blured-text-2 {
+    text-shadow: 0 0 14px black;
+    color: transparent;
+}
