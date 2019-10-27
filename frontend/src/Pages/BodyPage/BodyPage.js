@@ -30,8 +30,8 @@ function BodyPage(props) {
             <BreadcrumbItem tag="a">{girl.name}</BreadcrumbItem>
           </Breadcrumb>
           <Jumbotron className='mt-2'>
-            <h1 className="display-">{girl.name} <small className='blured-text-2'>{girl.phoneNumber}</small></h1>
-            <ul>
+            <h1 className="girl-name">{girl.name} <small className='blured-text-2'>{girl.phoneNumber}</small></h1>
+            <ul className='characteristics'>
               <li>
                 Грудь: {girl.boobsSize} размер
               </li>
@@ -42,8 +42,8 @@ function BodyPage(props) {
                 Вес: {girl.weight} кг
               </li>
             </ul>
-            <div className='d-flex justify-content-between'>
-              <ul className='w-50'>
+            <div className='d-flex justify-content-between service-list'>
+              <ul>
                 <li>
                   Цена за час (аппартаменты): {girl.priceInOne}
                 </li>
@@ -55,7 +55,7 @@ function BodyPage(props) {
                 </li>
               </ul>
 
-              <ul className='w-50'>
+              <ul>
                 {girl.priceOutOne && (
                     <li>
                       Цена за час (выезд): {girl.priceOutOne}
@@ -73,7 +73,7 @@ function BodyPage(props) {
                 )}
               </ul>
             </div>
-            <p className="lead">{girl.description}</p>
+            <p className="descr lead">{girl.description}</p>
             <div className='d-flex align-items-start flex-wrap'>
               {girl.photos.map(photo => <img className='card__img' src={'https://dosugkzn.xyz' + photo} alt=""/>)}
             </div>

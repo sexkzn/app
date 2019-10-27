@@ -23,3 +23,38 @@ img.card__img {
     text-shadow: 0 0 14px black;
     color: transparent;
 }
+
+.service-list ul {
+    width: 50%;
+}
+
+
+
+
+@media (max-width: 767px) {
+    .blured-text-2 {
+        font-size: 0.5em;
+    }
+
+    .service-list {
+        flex-direction: column;
+    }
+
+    .service-list ul {
+        width: 100%;
+        padding-left: 10px;
+    }
+
+    .characteristics {
+        padding-left: 10px;
+    }
+
+    p.descr {
+        font-size: 14px;
+    }
+
+    .girl-name {
+        display: flex;
+        flex-direction: column;
+    }
+}

@@ -49,9 +49,9 @@ function BodiesPage() {
               scrollableTarget="scrollableDiv"
           >
             {chunks.map(items => (
-                <Row className='mb-3'>
+                <Row>
                   {items.map(item => (
-                      <Col md={3}>
+                      <Col className='mb-3' lg={3}>
                         <NavLink className='no-decoration' to={`/girl/${item.id}`}>
                           <Card>
                             <CardImg className='card__img' top width src={`https://dosugkzn.xyz/${item.avatar}`} alt="Card image cap" />
