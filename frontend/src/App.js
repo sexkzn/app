@@ -10,7 +10,7 @@ function App() {
         <Switch>
           <Container>
             <Navbar color="light" light expand="md">
-              <NavbarBrand href="/">girls parser</NavbarBrand>
+              <NavbarBrand href="/">dosugkzn.xyz</NavbarBrand>
             </Navbar>
             {routes.map((props, index) => <Route key={index} {...props} />)}
           </Container>

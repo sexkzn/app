@@ -11,7 +11,7 @@ function Seo({
       <meta lang='ru' />
       <title>{title}</title>
       <meta name='description' content={description} />
-      <meta name='keywords' content='шлюхи, проститутки, досуг, казань' />
+      <meta name='keywords' content='проститутки, индивидуалки, шлюхи, феи, интим, секс, казань, казани' />
     </Helmet>
   );
 }
