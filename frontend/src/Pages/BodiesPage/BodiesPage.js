@@ -36,7 +36,7 @@ function BodiesPage() {
   const chunks = chunk(girls, 4);
   return (
       [
-        <Seo title={`SexKZN шлюхи и проституки казани`} description={`Акнеты всех шлюх и проституток Казани`} />,
+        <Seo title={`Проститутки Индивидуалки Шлюхи Казань`} description={`Каталог лучших проституток и индивидуалок Казани. Лучшие секс и интим услуги в Казани, фотографии проверены.`} />,
         <div id='scrollableDiv' className='mt-2' id>
           <InfiniteScroll
               dataLength={girls.length} //This is important field to render the next data
