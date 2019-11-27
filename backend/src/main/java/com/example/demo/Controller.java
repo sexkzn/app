@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,6 +21,15 @@ public class Controller {
 
     @Autowired
     private GirlRepository repository;
+
+    @GetMapping("/config")
+    public ConfigModel f(UsernamePasswordAuthenticationToken authentication) {
+        ConfigModel config = new ConfigModel();
+        if (authentication != null) {
+            config.setUser(((User) authentication.getPrincipal()).getUsername());
+        }
+        return config;
+    }
 
     @CrossOrigin(origins = "*")
     @GetMapping(path = "/api/girls")
