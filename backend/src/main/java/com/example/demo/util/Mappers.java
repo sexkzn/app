@@ -10,6 +10,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -76,6 +77,7 @@ public abstract class Mappers {
         entity.setUsername(registerRequest.getUsername());
         entity.setEmail(registerRequest.getEmail());
         entity.setEnabled(true);
+        entity.setRoles(Collections.singletonList("user"));
         entity.setPassword(passwordEncoder.encode(registerRequest.getPassword()));
         return entity;
     }
