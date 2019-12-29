@@ -1,7 +1,13 @@
 package com.example.demo.util;
 
 import com.example.demo.entity.ProfileEntity;
+import com.example.demo.entity.UserEntity;
 import com.example.demo.model.Profile;
+import com.example.demo.model.RegisterRequest;
+import com.example.demo.model.User;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.util.Arrays;
 import java.util.List;
@@ -52,5 +58,25 @@ public abstract class Mappers {
                 profile.setAvatar(l.get(0));
         }
         return profile;
+    }
+
+    public static User map(UserEntity entity) {
+        if (entity == null) return null;
+        List<GrantedAuthority> authorities = null;
+        if (entity.getRoles() != null) {
+            authorities = entity.getRoles().stream().map(SimpleGrantedAuthority::new).collect(Collectors.toList());
+        }
+
+        return new User(entity.getEmail(), entity.getUsername(), entity.getPassword(), authorities);
+    }
+
+    public static UserEntity map(RegisterRequest registerRequest, PasswordEncoder passwordEncoder) {
+        if (registerRequest == null) return null;
+        UserEntity entity = new UserEntity();
+        entity.setUsername(registerRequest.getUsername());
+        entity.setEmail(registerRequest.getEmail());
+        entity.setEnabled(true);
+        entity.setPassword(passwordEncoder.encode(registerRequest.getPassword()));
+        return entity;
     }
 }

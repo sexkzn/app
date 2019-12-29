@@ -27,6 +27,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.sql.DataSource;
 import java.io.IOException;
 
 @Configuration
@@ -61,10 +62,13 @@ public class AppConfig {
     public static class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
         @Autowired
-        public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-            auth.inMemoryAuthentication()
-                    .withUser("user").password(passwordEncoder().encode("password")).authorities("ROLE_test");
-        }
+        private DataSource dataSource;
+
+//        @Autowired
+//        public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+//            auth.jdbcAuthentication().dataSource(dataSource).
+//                    .usersByUsernameQuery("select username,password,enabled from demo.username where username = ?");
+//        }
 
         @Override
         protected void configure(HttpSecurity http) throws Exception {

@@ -47,4 +47,28 @@
         <sqlFile path="data/init_profiles.sql"/>
     </changeSet>
 
+    <changeSet author="me" id="create_user">
+        <sql>
+            create table demo.user(
+            id uuid NOT NULL DEFAULT uuid_generate_v4(),
+            creation_date timestamp NOT NULL,
+            last_action_date timestamp NOT NULL,
+
+            username varchar not null primary key,
+            email varchar not null,
+            password varchar not null,
+            enabled boolean not null,
+            roles varchar
+            );
+        </sql>
+    </changeSet>
+
+
+    <changeSet author="me" id="insert_admin">
+        <sql>
+            insert into demo.user(creation_date, last_action_date, username, email, password, enabled, roles)
+            values(current_timestamp, current_timestamp, 'admin', 'admin@admin.com', '$2a$10$Au8.v4ZqqUhMJZpCyXtlZ.6wePXoMGQ.ordjo6ay00a6azxYZUZZO', true, 'admin');
+        </sql>
+    </changeSet>
+
 </databaseChangeLog>
