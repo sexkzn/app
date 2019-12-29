@@ -8,10 +8,10 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "girl", schema = "demo")
+@Table(name = "profile", schema = "demo")
 @Getter
 @Setter
-public class GirlEntity extends AbstractEntity {
+public class ProfileEntity extends AbstractEntity {
     @Column(name = "ext_id")
     private Integer extId;
 

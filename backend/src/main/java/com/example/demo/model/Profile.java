@@ -12,7 +12,7 @@ import java.util.UUID;
 @Setter
 @Getter
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class Girl implements Serializable {
+public class Profile implements Serializable {
     private UUID id;
     private String name;
     private String phoneNumber;

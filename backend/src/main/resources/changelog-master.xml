@@ -11,9 +11,9 @@
         </sql>
     </changeSet>
 
-    <changeSet author="me" id="create_girl">
+    <changeSet author="me" id="create_profile">
         <sql>
-            CREATE TABLE demo.girl (
+            CREATE TABLE demo.profile (
             id uuid NOT NULL DEFAULT uuid_generate_v4(),
             creation_date timestamp NOT NULL,
             last_action_date timestamp NOT NULL,
@@ -36,15 +36,15 @@
             checked boolean,
             photos varchar,
 
-            CONSTRAINT girl_pk PRIMARY KEY (id)
+            CONSTRAINT profile_pk PRIMARY KEY (id)
             );
 
 
         </sql>
     </changeSet>
 
-    <changeSet author="me" id="insert_girl">
-        <sqlFile path="data/init_girls.sql"/>
+    <changeSet author="me" id="insert_profile">
+        <sqlFile path="data/init_profiles.sql"/>
     </changeSet>
 
 </databaseChangeLog>

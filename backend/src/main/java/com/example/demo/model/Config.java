@@ -7,6 +7,6 @@ import lombok.Setter;
 @Setter
 @Getter
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class ConfigModel {
+public class Config {
     private String user;
 }
