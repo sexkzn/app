@@ -1,0 +1,50 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet author="me" id="init">
+        <sql>
+            create schema if not exists demo;
+            create extension if not exists "uuid-ossp";
+        </sql>
+    </changeSet>
+
+    <changeSet author="me" id="create_girl">
+        <sql>
+            CREATE TABLE demo.girl (
+            id uuid NOT NULL DEFAULT uuid_generate_v4(),
+            creation_date timestamp NOT NULL,
+            last_action_date timestamp NOT NULL,
+
+            ext_id integer,
+            name varchar,
+            age integer,
+            weight integer,
+            phone_number varchar,
+            height integer,
+            boobs_size integer,
+            description varchar,
+            condition varchar,
+            price_in_one integer,
+            price_in_two integer,
+            price_in_night integer,
+            price_out_one integer,
+            price_out_two integer,
+            price_out_night integer,
+            checked boolean,
+            photos varchar,
+
+            CONSTRAINT girl_pk PRIMARY KEY (id)
+            );
+
+
+        </sql>
+    </changeSet>
+
+    <changeSet author="me" id="insert_girl">
+        <sqlFile path="data/init_girls.sql"/>
+    </changeSet>
+
+</databaseChangeLog>

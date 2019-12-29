@@ -1,5 +1,9 @@
-package com.example.demo;
+package com.example.demo.rest;
 
+import com.example.demo.entity.GirlEntity;
+import com.example.demo.model.ConfigModel;
+import com.example.demo.model.Girl;
+import com.example.demo.repository.GirlRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

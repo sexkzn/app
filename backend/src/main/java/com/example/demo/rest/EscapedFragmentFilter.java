@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.rest;
 
 import org.apache.catalina.connector.RequestFacade;
 import org.springframework.core.io.FileSystemResource;

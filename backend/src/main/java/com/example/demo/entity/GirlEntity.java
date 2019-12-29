@@ -1,30 +1,22 @@
-package com.example.demo;
+package com.example.demo.entity;
 
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Id;
 import javax.persistence.Table;
-import java.util.UUID;
 
 @Entity
-@Table(name = "girl", schema = "test")
+@Table(name = "girl", schema = "demo")
 @Getter
 @Setter
-public class GirlEntity {
-
-    @Id
-    @Column(name = "id")
-    private UUID id;
-
+public class GirlEntity extends AbstractEntity {
     @Column(name = "ext_id")
     private Integer extId;
 
     @Column(name = "name")
     private String name;
-
 
     @Column(name = "age")
     private Integer age;
