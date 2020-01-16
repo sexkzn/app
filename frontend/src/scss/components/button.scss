@@ -1,0 +1,40 @@
+.button {
+  padding: 10px 40px;
+
+  font-size: 14px;
+  color: #ffffff;
+  text-transform: uppercase;
+
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 5px;
+
+  outline: none;
+  cursor: pointer;
+
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+
+  &--primary {
+    background-color: #fed136;
+    border-color: #fed136;
+
+    &:hover {
+      background-color: #fec810!important;
+      border-color: #fec810!important;
+    }
+  }
+
+  &--secondary {
+    background-color: #373c44;
+
+    &:hover {
+      background-color: #212529;
+    }
+  }
+
+  &--link {
+    padding: 10px;
+
+    color: #fed136;
+  }
+}

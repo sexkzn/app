@@ -1,0 +1,60 @@
+@import "../../node_modules/normalize-scss/sass/normalize/import-now";
+@import "~animate.css";
+$fa-font-path: "~font-awesome/fonts";
+@import '~font-awesome/scss/font-awesome';
+
+* {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.app {
+  flex-grow: 1;
+  margin-bottom: 40px;
+}
+
+.link {
+  color: #fed136;
+}
+
+p {
+  font-size: 14px;
+  color: #212529;
+}
+
+@import "mixins";
+
+@import "components/button";
+@import "components/input-text";
+@import "components/modal";
+@import "blocks/layout";
+@import "components/header";
+@import "components/main-nav";
+@import "components/user-box";
+@import "components/header-filters";
+@import "components/slider";
+@import "components/field";
+@import "components/checkbox";
+@import "components/title";
+@import "components/card";
+@import "blocks/footer";
+@import "components/loader";
+@import "blocks/girl-page";
+@import "components/breadcrumbs";
+@import "components/slick-slider";
+@import "components/scroll-button";
+@import "components/load-more";
+@import "components/profile-header";
+@import "components/profile-stats-block";
+@import "components/sidebar";
+@import "components/ul";
+@import "blocks/profiles-list-page";
+@import "blocks/add-profile-page";
+@import "components/input-number";
+@import "components/input-select";
+@import "components/table";
+@import "components/input-mask";
+
+@import "blocks/main-page";
+@import "blocks/profile-page";
+@import "blocks/edit-profile-page";
+@import "components/register-form";

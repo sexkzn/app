@@ -54,7 +54,7 @@ function BodiesPage() {
                       <Col className='mb-3' lg={3}>
                         <NavLink className='no-decoration' to={`/girl/${item.id}`}>
                           <Card>
-                            <CardImg className='card__img' top width src={`https://dosugkzn.xyz/${item.avatar}`} alt="Card image cap" />
+                            <CardImg className='card__img' top width src={item.avatar} alt="Card image cap" />
                             <CardBody>
                               <CardTitle>{item.name}</CardTitle>
                               <CardSubtitle className='mb-2 blured-text'>{item.phoneNumber}</CardSubtitle>

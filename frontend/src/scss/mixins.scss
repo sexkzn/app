@@ -1,0 +1,31 @@
+@mixin container() {
+  max-width: 1110px;
+
+  margin: 0 auto;
+  padding: 0 15px;
+  box-sizing: border-box;
+
+  @media (max-width: 1024px) {
+    max-width: 1023px;
+
+    padding: 0 5px;
+  }
+}
+
+@mixin color-yellow() {
+  color: #fed136;
+  font-weight: bold;
+}
+
+@mixin control() {
+  width: 100%;
+  color: #495057;
+  padding: 5px;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  box-sizing: border-box;
+  outline-color: #fed136;
+}

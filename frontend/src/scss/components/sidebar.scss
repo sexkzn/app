@@ -1,0 +1,41 @@
+.sidebar {
+  border: 1px solid lightgray;
+
+  &__list,
+  &__links {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  &__item {
+    padding: 1rem;
+
+    border-bottom: 1px solid lightgray;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &-title {
+      margin: 10px 0;
+
+      font-size: 18px;
+      font-weight: bold;
+    }
+  }
+
+  &__link {
+    display: block;
+    margin: 5px 0;
+
+    font-size: 14px;
+    color: #000000;
+    text-decoration: none;
+
+    &:hover {
+      color: #fed136;
+      text-decoration: underline;
+    }
+  }
+}

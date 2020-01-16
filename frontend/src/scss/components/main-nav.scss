@@ -1,0 +1,24 @@
+.main-nav {
+  &__list {
+    display: flex;
+
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  &__link {
+    display: block;
+
+    padding: 15px;
+
+    font-size: 14px;
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    &:hover {
+      color: #fed136;
+    }
+  }
+}

@@ -1,0 +1,29 @@
+.profile-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__loader > .lds-ring {
+    width: 30px;
+    height: 30px;
+
+    & div {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  &__balance {
+    display: flex;
+    align-items: center;
+
+    &-value {
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    &-up {
+      margin-left: 20px;
+    }
+  }
+}

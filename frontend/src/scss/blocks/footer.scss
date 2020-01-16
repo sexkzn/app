@@ -1,0 +1,42 @@
+.footer {
+  margin-top: auto;
+  padding: 25px 0;
+  background-color: #212529;
+
+  &__container {
+    @include container();
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__copyright {
+    color: #ffffff;
+    text-align: center;
+  }
+
+  &__center {
+    max-width: 600px;
+    font-size: 14px;
+    color: #ffffff;
+    text-align: center;
+
+    & a {
+      color: #fed136;
+      text-decoration: underline dashed #fed136;
+    }
+  }
+
+  &__email {
+    margin-top: 10px;
+  }
+
+  &__terms-of-use {
+    text-align: center;
+
+    & a {
+      color: #fed136;
+    }
+  }
+}

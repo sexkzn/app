@@ -1,0 +1,26 @@
+.checkbox {
+  &__control {
+    & .rc-checkbox-input {
+      width: 20px;
+      height: 20px;
+    }
+
+    & .rc-checkbox-inner {
+      width: 20px;
+      height: 20px;
+
+      &::after {
+        left: calc(50% - 3px);
+        top: calc(50% - 6px);
+      }
+    }
+  }
+
+  .rc-checkbox-checked .rc-checkbox-inner {
+    background-color: #fed136;
+    border-color: #fed136;
+  }
+  .rc-checkbox:hover .rc-checkbox-inner, .rc-checkbox-input:focus + .rc-checkbox-inner {
+    border-color: #fed136;
+  }
+}

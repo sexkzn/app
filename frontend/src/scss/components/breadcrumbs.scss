@@ -1,0 +1,45 @@
+.breadcrumbs {
+  display: flex;
+  align-items: baseline;
+
+  margin: 0;
+  padding: 15px 0;
+  list-style: none;
+
+  &__item {
+    position: relative;
+    .breadcrumbs__link {
+      padding-right: 15px;
+
+      color: #212529;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    &:last-child {
+      .breadcrumbs__link {
+        color: #fec810;
+        text-decoration: none;
+      }
+
+      &::after {
+        display: none;
+      }
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: calc(50% - 5px);
+      width: 10px;
+      height: 10px;
+      background: url("/arrow.png");
+      background-size: contain;
+      transform: rotate(-90deg);
+    }
+  }
+}

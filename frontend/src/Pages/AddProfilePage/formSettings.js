@@ -1,0 +1,122 @@
+export default [
+  {
+    src: 'InputText',
+    name: 'name',
+    label: 'Имя:',
+    labelPosition: 'left',
+  },
+  {
+    src: 'InputNumber',
+    name: 'age',
+    label: 'Возраст:',
+    labelPosition: 'left',
+    min: 18,
+    max: 50,
+  },
+  {
+    src: 'InputNumber',
+    name: 'growth',
+    label: 'Рост:',
+    labelPosition: 'left',
+    min: 150,
+    max: 200,
+  },
+  {
+    src: 'InputNumber',
+    name: 'weight',
+    label: 'Вес:',
+    labelPosition: 'left',
+  },
+  {
+    src: 'InputSelect',
+    name: 'boosSize',
+    label: 'Размер груди:',
+    labelPosition: 'left',
+    options: [
+      {
+        value: 1,
+        label: 1,
+      },
+      {
+        value: 2,
+        label: 2,
+      },
+      {
+        value: 3,
+        label: 3,
+      },
+      {
+        value: 4,
+        label: 4,
+      },
+      {
+        value: 5,
+        label: 5,
+      },
+      {
+        value: 6,
+        label: 6,
+      },
+      {
+        value: 7,
+        label: 7,
+      },
+    ],
+  },
+  {
+    src: 'InputSelect',
+    name: 'hairColor',
+    label: 'Цвет волос:',
+    labelPosition: 'left',
+    options: [
+      {
+        label: 'Блондинка',
+        value: 'Блондинка',
+      },
+    ],
+  },
+  {
+    src: 'InputText',
+    name: 'nation',
+    label: 'Национальность:',
+    labelPosition: 'left',
+  },
+  {
+    src: 'InputText',
+    name: 'appearance',
+    label: 'Внешность:',
+    labelPosition: 'left',
+  },
+  {
+    src: 'InputMask',
+    name: 'phone',
+    label: 'Телефон:',
+    labelPosition: 'left',
+    placeholder: '+7',
+    mask: [
+      '+',
+      '7',
+      '(',
+      /[1-9]/,
+      /\d/,
+      /\d/,
+      ')',
+      ' ',
+      /\d/,
+      /\d/,
+      /\d/,
+      '-',
+      /\d/,
+      /\d/,
+      '-',
+      /\d/,
+      /\d/,
+    ],
+  },
+  {
+    src: 'InputText',
+    name: 'appearance',
+    label: 'Внешность:',
+    labelPosition: 'left',
+  },
+];

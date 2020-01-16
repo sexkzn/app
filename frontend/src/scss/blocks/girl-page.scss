@@ -1,0 +1,23 @@
+.girl-page {
+  @include container();
+  padding-top: 20px;
+  &__loader {
+    margin-top: 100px;
+  }
+
+  &__title {
+    margin: 0;
+  }
+
+  &__phone {
+    font-weight: bold;
+  }
+
+  &__main {
+    margin-top: 40px;
+  }
+
+  &__description {
+    margin: 20px 0;
+  }
+}

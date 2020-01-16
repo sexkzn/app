@@ -1,0 +1,59 @@
+.profile-stats-block {
+  display: inline-block;
+
+  min-width: 200px;
+
+  box-shadow: 4px 4px 13px -6px rgba(0, 0, 0, 0.75);
+
+  &__title {
+    padding: 0.5rem 1rem;
+
+    font-size: 18px;
+    font-weight: bold;
+    color: #fed136;
+
+    background-color: #212529;
+  }
+
+  &__list {
+    padding: 10px 0 0 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    & span {
+      display: block;
+      padding: 0.5rem 1rem;
+
+      &:empty {
+        display: none;
+      }
+    }
+
+    & > * {
+      font-size: 16px;
+      color: #212529;
+      text-decoration: none;
+    }
+
+    &-value {
+      color: #fed136;
+      font-weight: bold;
+    }
+  }
+
+  &__link {
+    display: block;
+    padding: 0.5rem 1rem;
+
+    &:hover {
+      text-decoration: underline;
+      color: #fed136;
+    }
+  }
+}

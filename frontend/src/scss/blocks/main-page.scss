@@ -1,0 +1,35 @@
+.main-page {
+  @include container();
+
+  &__title {
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+  }
+
+  &__col {
+    width: 240px;
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .main-page {
+    &__row {
+      justify-content: center;
+    }
+
+    &__col {
+      padding: 0 5px;
+    }
+  }
+}

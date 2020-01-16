@@ -1,0 +1,19 @@
+.input-select {
+  width: 100%;
+
+  & .rc-select-selection {
+    @include control();
+
+    height: 30px;
+  }
+
+  &.rc-select-enabled .rc-select-selection:hover {
+    border:1px solid #ced4da;
+    box-shadow: none;
+  }
+
+  & .rc-select-selection__rendered {
+    height: 18px;
+    line-height: 20px;
+  }
+}

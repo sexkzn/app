@@ -1,0 +1,15 @@
+.slick {
+  &__item {
+    max-width: 260px;
+    max-height: 350px;
+
+    outline: none;
+    cursor: pointer;
+
+    & img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+}
