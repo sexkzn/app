@@ -5,7 +5,11 @@ import 'rc-checkbox/assets/index.css';
 function Checkbox(props) {
   return (
     <div className="checkbox">
-      <RcCheckbox className="checkbox__control checkbox-control" {...props} />
+      <RcCheckbox
+        className="checkbox__control checkbox-control"
+        {...props}
+        indeterminate={true}
+      />
     </div>
   );
 }

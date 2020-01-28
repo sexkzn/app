@@ -41,6 +41,7 @@ function Field(props) {
       <div className="field__control-container">
         <Control {...rest} {...input} />
         {help && <div className="field__control-help">{help}</div>}
+        <div className="field__error">{touched && error}</div>
       </div>
     </div>
   );

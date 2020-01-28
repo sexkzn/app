@@ -23,13 +23,6 @@ function AddProfileSidebar(props) {
         className="profile-page__sidebar"
         items={[
           {
-            title: 'Сообщения',
-            links: [
-              { label: 'Сообщения 0 из 0', link: '/messages' },
-              { label: 'Новое сообщение', link: '/messages/new' },
-            ],
-          },
-          {
             title: 'Финансовая статистика',
             links: [
               {

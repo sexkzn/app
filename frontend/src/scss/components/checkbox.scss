@@ -23,4 +23,30 @@
   .rc-checkbox:hover .rc-checkbox-inner, .rc-checkbox-input:focus + .rc-checkbox-inner {
     border-color: #fed136;
   }
+
+  .rc-checkbox-input:indeterminate + .rc-checkbox-inner {
+    background: red;
+  }
+
+  &-group {
+    display: flex;
+
+    &__list {
+      & .field__error {
+        display: none;
+      }
+    }
+
+    &__item {
+      flex-grow: 1;
+
+      & .field__control-container {
+        flex-grow: 0;
+      }
+    }
+
+    &__sub-items {
+      padding-left: 20px;
+    }
+  }
 }

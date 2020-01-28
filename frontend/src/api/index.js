@@ -7,6 +7,7 @@ const Api = {
   profilesDelete: '/profiles/delete/:id',
   login: '/login',
   config: '/config',
+  profileCreate: '/profiles/create',
 };
 
 export default Api;

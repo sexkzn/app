@@ -13,7 +13,6 @@
   &--left,
   &--right {
     display: flex;
-    align-items: baseline;
   }
 
   &--left {
@@ -27,5 +26,13 @@
       margin-left: 5px;
       order: 5;
     }
+  }
+
+  &__error {
+    height: 18px;
+
+    font-size: 14px;
+    line-height: 18px;
+    color: red;
   }
 }
