@@ -14,7 +14,7 @@ const AuthBlock = ({ visible, changeVisible }) => {
   const [password, setPassword] = useState('');
   const [registerIsOpen, setRegisterIsOpen] = useState(false);
 
-  const { login: signIn } = useLogin();
+  const { login: signIn, register: signUp } = useLogin();
 
   const onLoginChange = (e) => {
     const value = e.target.value;
@@ -37,9 +37,13 @@ const AuthBlock = ({ visible, changeVisible }) => {
     signIn(login, password, () => changeVisible(false));
   };
 
+  const onRegister = (values) => {
+    signUp(values, () => {});
+  };
+
   return [
     <Modal isOpen={registerIsOpen} changeVisible={toggleRegisterModal}>
-      <RegisterForm changeVisible={toggleRegisterModal} />
+      <RegisterForm onSubmit={onRegister} changeVisible={toggleRegisterModal} />
     </Modal>,
     visible ? (
       <div className="user-box__auth">

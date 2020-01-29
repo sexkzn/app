@@ -6,30 +6,30 @@ module.exports = function(app) {
     changeOrigin: true,
   }));
 
-  app.get('/api/profile', (req, res) => {
-    res.setHeader('Content-Type', 'application/json');
-    res.send(
-      JSON.stringify({
-        stats: {
-          profiles: {
-            count: 10,
-            active: 7,
-            inactive: 3,
-          },
-          views: {
-            today: 20,
-            yesterday: 21,
-            all: 412,
-          },
-          consumption: {
-            forDay: 50,
-            forWeek: 350,
-            forMonth: 1500,
-          },
-        },
-      })
-    );
-  });
+  // app.get('/api/profile', (req, res) => {
+  //   res.setHeader('Content-Type', 'application/json');
+  //   res.send(
+  //     JSON.stringify({
+  //       stats: {
+  //         profiles: {
+  //           count: 10,
+  //           active: 7,
+  //           inactive: 3,
+  //         },
+  //         views: {
+  //           today: 20,
+  //           yesterday: 21,
+  //           all: 412,
+  //         },
+  //         consumption: {
+  //           forDay: 50,
+  //           forWeek: 350,
+  //           forMonth: 1500,
+  //         },
+  //       },
+  //     })
+  //   );
+  // });
 
   app.use(proxy('/api', {
     target: 'http://localhost:8080/',
@@ -48,15 +48,15 @@ module.exports = function(app) {
   //   })
   // );
 
-  app.get('/config', (req, res) => {
-    res.setHeader('Content-Type', 'application/json');
-    res.send({
-      username: 'Shkura',
-      email: 'shkura@rembler.ru',
-      balance: 1023,
-      roles: ['admin']
-    });
-  });
+  // app.get('/config', (req, res) => {
+  //   res.setHeader('Content-Type', 'application/json');
+  //   res.send({
+  //     username: 'Shkura',
+  //     email: 'shkura@rembler.ru',
+  //     balance: 1023,
+  //     roles: ['admin']
+  //   });
+  // });
 
   //
   // app.get('/profiles', (req, res) => {

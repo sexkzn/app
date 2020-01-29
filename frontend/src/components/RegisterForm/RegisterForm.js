@@ -1,22 +1,14 @@
 import React from 'react';
 import { reduxForm } from 'redux-form';
 
-import useLogin from '../../hooks/useLogin';
-
 import Title from '../Title';
-import Field from '../Field/Field';
+import Field from '../Field';
 import Button from '../Button';
+import Captcha from "../Captcha";
 
 function RegisterForm({ handleSubmit, changeVisible }) {
-  const { login } = useLogin();
-
-  const onSubmit = (values, err) => {
-    console.log(values);
-    console.log(err);
-  };
-
   return (
-    <form onSubmit={onSubmit} className="register-form slideInDown animated">
+    <form onSubmit={handleSubmit} className="register-form">
       <div className="register-form__header">
         <Title className="register-form__title">Регистрация</Title>
         <Button
@@ -40,6 +32,15 @@ function RegisterForm({ handleSubmit, changeVisible }) {
           label="Повторите пароль"
           type="password"
           name="confirmPassword"
+        />
+      </div>
+      <div className="register-form__row">
+        <div className='register-form__captcha'>
+          <Captcha />
+        </div>
+        <Field
+          src="InputText"
+          name='captcha'
         />
       </div>
       <Button type="submit">Регистрация</Button>

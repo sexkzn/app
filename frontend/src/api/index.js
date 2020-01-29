@@ -7,6 +7,8 @@ const Api = {
   profilesDelete: '/profiles/delete/:id',
   login: '/login',
   config: '/config',
+  register: '/register',
+  captcha: '/captcha',
   profileCreate: '/profiles/create',
 };
 
