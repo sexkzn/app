@@ -71,4 +71,17 @@
         </sql>
     </changeSet>
 
+    <changeSet author="me" id="create_table_reg_session">
+        <sql>
+            create table demo.reg_session(
+            id uuid NOT NULL DEFAULT uuid_generate_v4() primary key,
+            creation_date timestamp NOT NULL,
+            last_action_date timestamp NOT NULL,
+
+            username varchar not null,
+            code varchar not null
+            );
+        </sql>
+    </changeSet>
+
 </databaseChangeLog>
