@@ -1,4 +1,4 @@
-package com.example.demo.rest;
+package com.example.demo.rest.service;
 
 import com.example.demo.entity.UserEntity;
 import com.example.demo.model.RegisterRequest;
@@ -20,11 +20,11 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
-    @PostMapping(path = "/api/users/register")
+    @PostMapping(path = "/register")
     public void register(@RequestBody RegisterRequest registerRequest) {
-        UserEntity entity = userRepository.findByUsername(registerRequest.getUsername());
-        Validations.validateUsername(registerRequest.getUsername(), entity);
-        Validations.validatePassword(registerRequest.getPassword(), registerRequest.getPasswordCheck());
+        UserEntity entity = userRepository.findByUsername(registerRequest.getLogin());
+        Validations.validateUsername(registerRequest.getLogin(), entity);
+        Validations.validatePassword(registerRequest.getPassword(), registerRequest.getConfirmPassword());
         userRepository.save(Mappers.map(registerRequest, passwordEncoder));
     }
 }

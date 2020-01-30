@@ -74,7 +74,7 @@ public abstract class Mappers {
     public static UserEntity map(RegisterRequest registerRequest, PasswordEncoder passwordEncoder) {
         if (registerRequest == null) return null;
         UserEntity entity = new UserEntity();
-        entity.setUsername(registerRequest.getUsername());
+        entity.setUsername(registerRequest.getLogin());
         entity.setEmail(registerRequest.getEmail());
         entity.setEnabled(true);
         entity.setRoles(Collections.singletonList("user"));

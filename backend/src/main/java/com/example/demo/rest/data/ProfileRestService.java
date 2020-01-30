@@ -1,4 +1,4 @@
-package com.example.demo.rest;
+package com.example.demo.rest.data;
 
 import com.example.demo.model.Profile;
 import com.example.demo.repository.ProfileRepository;
@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.UUID;
 
 @RestController
-public class ProfileService {
+public class ProfileRestService {
 
     @Autowired
     private ProfileRepository repository;
