@@ -68,7 +68,7 @@ public abstract class Mappers {
             authorities = entity.getRoles().stream().map(SimpleGrantedAuthority::new).collect(Collectors.toList());
         }
 
-        return new User(entity.getEmail(), entity.getUsername(), entity.getPassword(), authorities);
+        return new User(entity.getId(), entity.getEmail(), entity.getUsername(), entity.getPassword(), authorities);
     }
 
     public static UserEntity map(RegistrationRequest registrationRequest, PasswordEncoder passwordEncoder) {

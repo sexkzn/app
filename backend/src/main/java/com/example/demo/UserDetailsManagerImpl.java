@@ -46,7 +46,7 @@ public class UserDetailsManagerImpl implements UserDetailsManager {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         UserEntity entity = userRepository.findByUsername(username);
         if (entity == null)
-            return new User("anonymous", "anonymous", "N/A", Collections.emptyList());
+            return new User(null, "anonymous", "anonymous", "N/A", Collections.emptyList());
         return Mappers.map(entity);
     }
 }
