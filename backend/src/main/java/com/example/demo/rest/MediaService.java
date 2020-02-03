@@ -3,6 +3,7 @@ package com.example.demo.rest;
 import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.FileSystemResource;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.web.bind.annotation.*;
@@ -24,9 +25,10 @@ public class MediaService {
     private static final String PRIVATE = "/private";
 
     @GetMapping(value = "/images/private/{profileId}/{filename}")
-    public void getPrivateImage(@PathVariable UUID profileId, @PathVariable String filename, HttpServletResponse response, UsernamePasswordAuthenticationToken userToken) throws IOException {
+    public void getPrivateImage(@PathVariable UUID profileId, @PathVariable String filename,
+                                HttpServletResponse response, UsernamePasswordAuthenticationToken userToken) throws IOException {
         if (userToken == null || userToken.getName() == null || profileId == null || filename == null) {
-            response.setStatus(400);
+            response.setStatus(HttpStatus.BAD_REQUEST.value());
             return;
         }
         FileSystemResource resource = new FileSystemResource(buildResourcePath(userToken.getName(), profileId.toString(), filename));
@@ -34,7 +36,21 @@ public class MediaService {
             response.setContentType(MediaType.IMAGE_JPEG_VALUE);
             IOUtils.copy(resource.getInputStream(), response.getOutputStream());
         } else {
-            response.setStatus(400);
+            response.setStatus(HttpStatus.BAD_REQUEST.value());
+        }
+    }
+
+    @PostMapping(value = "/images/private/{profileId}/{filename}/delete")
+    public void delete(@PathVariable UUID profileId, @PathVariable String filename, HttpServletResponse response, UsernamePasswordAuthenticationToken userToken) throws IOException {
+        if (userToken == null || userToken.getName() == null || profileId == null || filename == null) {
+            response.setStatus(HttpStatus.BAD_REQUEST.value());
+            return;
+        }
+        FileSystemResource resource = new FileSystemResource(buildResourcePath(userToken.getName(), profileId.toString(), filename));
+        if (resource.exists()) {
+            resource.getFile().delete();
+        } else {
+            response.setStatus(HttpStatus.BAD_REQUEST.value());
         }
     }
 
@@ -42,7 +58,7 @@ public class MediaService {
     public void handleFileUpload(@RequestParam("file") MultipartFile file, @PathVariable String profileId,
                                  UsernamePasswordAuthenticationToken token, HttpServletResponse response) throws IOException {
         if (token == null || token.getName() == null) {
-            response.setStatus(400);
+            response.setStatus(HttpStatus.BAD_REQUEST.value());
             return;
         }
 
