@@ -13,7 +13,7 @@ export default [
   },
   {
     src: 'InputNumber',
-    name: 'growth',
+    name: 'height',
     label: 'Рост:',
     labelPosition: 'left',
   },
@@ -84,14 +84,20 @@ export default [
     ],
   },
   {
-    src: 'InputText',
+    src: 'InputSelect',
     name: 'appearance',
     label: 'Внешность:',
     labelPosition: 'left',
+    options: [
+      {
+        label: 'Славянская',
+        value: 'Славянская',
+      },
+    ],
   },
   {
     src: 'InputMask',
-    name: 'phone',
+    name: 'phoneNumber',
     label: 'Телефон:',
     labelPosition: 'left',
     placeholder: '+7',
@@ -143,24 +149,24 @@ export default [
         value: 'departure',
         subItems: [
           {
-            id: 'departureFlat',
+            id: 'flat',
             label: 'Выезд в квартиры',
-            value: 'departureFlat',
+            value: 'flat',
           },
           {
-            id: 'departureHotel',
+            id: 'hotel',
             label: 'Выезд в гостиницы',
-            value: 'departureHotel',
+            value: 'hotel',
           },
           {
-            id: 'departureSauna',
+            id: 'sauna',
             label: 'Выезд в сауны',
-            value: 'departureSauna',
+            value: 'sauna',
           },
           {
-            id: 'departureOffice',
+            id: 'office',
             label: 'Выезд в офис',
-            value: 'departureOffice',
+            value: 'office',
           },
         ],
       },
@@ -176,15 +182,15 @@ export default [
         label: 'Апартаменты',
         subItems: [
           {
-            id: 'apartmentsRateForHour',
+            id: 'priceInOne',
             placeholder: 'За час',
           },
           {
-            id: 'apartmentsRateFor2Hours',
+            id: 'priceInTwo',
             placeholder: 'За два часа',
           },
           {
-            id: 'apartmentsRateForNight',
+            id: 'priceInNight',
             placeholder: 'За ночь',
           },
         ],
@@ -193,15 +199,15 @@ export default [
         label: 'Выезд',
         subItems: [
           {
-            id: 'departureRateForHour',
+            id: 'priceOutOne',
             placeholder: 'За час',
           },
           {
-            id: 'departureRateFor2Hours',
+            id: 'priceOutTwo',
             placeholder: 'За два часа',
           },
           {
-            id: 'departureRateForNight',
+            id: 'priceOutNight',
             placeholder: 'За ночь',
           },
         ],

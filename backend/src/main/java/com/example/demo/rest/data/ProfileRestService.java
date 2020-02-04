@@ -1,16 +1,15 @@
 package com.example.demo.rest.data;
 
+import com.example.demo.entity.ProfileEntity;
 import com.example.demo.model.Profile;
+import com.example.demo.model.ProfileCreateRequest;
 import com.example.demo.repository.ProfileRepository;
 import com.example.demo.util.Mappers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.UUID;
 
@@ -31,5 +30,12 @@ public class ProfileRestService {
     @GetMapping(path = "/api/profiles/{id}")
     public Profile findOne(@PathVariable("id") String id) {
         return Mappers.mapFull(repository.findById(UUID.fromString(id)).orElse(null));
+    }
+
+    @CrossOrigin(origins = "*")
+    @PostMapping(path = "/api/profiles")
+    public Profile create(@RequestBody ProfileCreateRequest request) {
+        ProfileEntity entity = new ProfileEntity();// TODO: 04.02.2020  
+        return null;
     }
 }

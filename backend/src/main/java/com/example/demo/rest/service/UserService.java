@@ -2,7 +2,7 @@ package com.example.demo.rest.service;
 
 import com.example.demo.entity.RegSessionEntity;
 import com.example.demo.entity.UserEntity;
-import com.example.demo.model.RegistrationRequest;
+import com.example.demo.model.UserCreateRequest;
 import com.example.demo.model.VerificationRequest;
 import com.example.demo.repository.RegSessionRepository;
 import com.example.demo.repository.UserRepository;
@@ -45,11 +45,11 @@ public class UserService {
 
 
     @PostMapping(path = "/register")
-    public void register(@RequestBody RegistrationRequest registrationRequest, HttpServletResponse response) {
-        UserEntity entity = userRepository.findByUsername(registrationRequest.getLogin());
-        Validations.validateUsername(registrationRequest.getLogin(), entity);
-        Validations.validatePassword(registrationRequest.getPassword(), registrationRequest.getConfirmPassword());
-        entity = userRepository.save(Mappers.map(registrationRequest, passwordEncoder));
+    public void register(@RequestBody UserCreateRequest userCreateRequest, HttpServletResponse response) {
+        UserEntity entity = userRepository.findByUsername(userCreateRequest.getLogin());
+        Validations.validateUsername(userCreateRequest.getLogin(), entity);
+        Validations.validatePassword(userCreateRequest.getPassword(), userCreateRequest.getConfirmPassword());
+        entity = userRepository.save(Mappers.map(userCreateRequest, passwordEncoder));
         UUID regsid = UUID.randomUUID();
         response.addCookie(new Cookie(REGSID, regsid.toString()));
         RegSessionEntity regSessionEntity = new RegSessionEntity();

@@ -9,7 +9,7 @@ const Api = {
   config: '/config',
   register: '/register',
   captcha: '/captcha',
-  profileCreate: '/profiles/create',
+  profileCreate: '/api/profiles',
 };
 
 export default Api;

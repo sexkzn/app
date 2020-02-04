@@ -13,10 +13,10 @@ const validate = (values) => {
     errors.age = 'Возраст должен быть в пределах 18 - 50 лет';
   }
 
-  if (!values.growth) {
-    errors.growth = REQUIRED_FIELD;
-  } else if (values.growth < 150 || values.growth > 200) {
-    errors.growth = 'Рост должен быть в пределах 150 - 200 см';
+  if (!values.height) {
+    errors.height = REQUIRED_FIELD;
+  } else if (values.height < 150 || values.height > 200) {
+    errors.height = 'Рост должен быть в пределах 150 - 200 см';
   }
 
   if (!values.weight) {
