@@ -35,7 +35,8 @@ public class ProfileRestService {
     @CrossOrigin(origins = "*")
     @PostMapping(path = "/api/profiles")
     public Profile create(@RequestBody ProfileCreateRequest request) {
-        ProfileEntity entity = new ProfileEntity();// TODO: 04.02.2020  
-        return null;
+        ProfileEntity entity = Mappers.map(request);
+        entity = repository.save(entity);
+        return Mappers.mapFull(entity);
     }
 }

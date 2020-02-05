@@ -35,6 +35,7 @@
             price_out_night integer,
             checked boolean,
             photos varchar,
+            services varchar,
 
             CONSTRAINT profile_pk PRIMARY KEY (id)
             );

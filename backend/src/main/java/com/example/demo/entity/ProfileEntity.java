@@ -63,4 +63,7 @@ public class ProfileEntity extends AbstractEntity {
     @Column(name = "photos")
     private String photos;
 
+    @Column(name = "services")
+    private String services;
+
 }
