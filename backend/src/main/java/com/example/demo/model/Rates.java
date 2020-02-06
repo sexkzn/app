@@ -9,7 +9,7 @@ public class Rates {
     private Integer priceInOne;
     private Integer priceInTwo;
     private Integer priceInNight;
-    private Integer priceOutOne;
-    private Integer priceOutTwo;
     private Integer priceOutNight;
+    private Integer priceOutTwo;
+    private Integer priceOutOne;
 }

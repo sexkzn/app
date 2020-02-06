@@ -2,10 +2,7 @@ package com.example.demo.util;
 
 import com.example.demo.entity.ProfileEntity;
 import com.example.demo.entity.UserEntity;
-import com.example.demo.model.Profile;
-import com.example.demo.model.ProfileCreateRequest;
-import com.example.demo.model.User;
-import com.example.demo.model.UserCreateRequest;
+import com.example.demo.model.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -89,65 +86,57 @@ public abstract class Mappers {
         if (request == null) return null;
         ProfileEntity entity = new ProfileEntity();
         // TODO: 05.02.2020
-        entity.setServices(servicesToString(request));
+        entity.setServices(servicesToString(request.getServices()));
 
         return entity;
     }
 
-    private static String servicesToString(ProfileCreateRequest r) {
+    private static String servicesToString(Services services) {
+        if (services == null) return null;
         char[] res = new char[41];
 
-        res[0] = r.getSexClassic() ? '1' : '0';
-        res[1] = r.getSexAnal() ? '1' : '0';
-        res[2] = r.getSexGroup() ? '1' : '0';
-        res[3] = r.getSexDouble() ? '1' : '0';
+        res[0] = services.isSexClassic() ? '1' : '0';
+        res[1] = services.isSexAnal() ? '1' : '0';
+        res[2] = services.isSexGroup() ? '1' : '0';
+        res[3] = services.isSexDouble() ? '1' : '0';
 
-        res[4] = r.getAffectionCondom() ? '1' : '0';
-        res[5] = r.getAffectionNoCondom() ? '1' : '0';
-        res[6] = r.getAffectionDeep() ? '1' : '0';
-        res[7] = r.getAffectionCar() ? '1' : '0';
-        res[8] = r.getAffectionCun() ? '1' : '0';
-        res[9] = r.getAffectionAn() ? '1' : '0';
-
-        res[10] = r.getFinishMouth() ? '1' : '0';
-        res[11] = r.getFinishFace() ? '1' : '0';
-        res[12] = r.getFinishChest() ? '1' : '0';
-
-        res[13] = r.getBdsmBondage() ? '1' : '0';
-        res[14] = r.getBdsmMistress() ? '1' : '0';
-        res[15] = r.getBdsmRpGames() ? '1' : '0';
-        res[16] = r.getBdsmEasy() ? '1' : '0';
-        res[17] = r.getBdsmFlogging() ? '1' : '0';
-        res[18] = r.getBdsmSlave() ? '1' : '0';
-        res[19] = r.getBdsmFetish() ? '1' : '0';
-        res[20] = r.getBdsmTrumping() ? '1' : '0';
-
-        res[21] = r.getExtremeStrapon() ? '1' : '0';
-        res[22] = r.getExtremeToys() ? '1' : '0';
-
-        res[23] = r.getStripProf() ? '1' : '0';
-        res[24] = r.getStripAmateur() ? '1' : '0';
-
-        res[25] = r.getMassageClassic() ? '1' : '0';
-        res[26] = r.getMassageProfessional() ? '1' : '0';
-        res[27] = r.getMassageRelax() ? '1' : '0';
-        res[28] = r.getMassageThai() ? '1' : '0';
-        res[29] = r.getMassageUrological() ? '1' : '0';
-        res[30] = r.getMassageErotic() ? '1' : '0';
-        res[31] = r.getMassageSakura() ? '1' : '0';
-
-        res[32] = r.getLesbiLight() ? '1' : '0';
-        res[33] = r.getLesbiFull() ? '1' : '0';
-
-        res[34] = r.getFistingAnal() ? '1' : '0';
-        res[35] = r.getFistingClassic() ? '1' : '0';
-
-        res[36] = r.getGoldenRainIn() ? '1' : '0';
-        res[37] = r.getGoldenRainOut() ? '1' : '0';
-
-        res[38] = r.getAddEscort() ? '1' : '0';
-        res[39] = r.getAddPhoto() ? '1' : '0';
-        res[40] = r.getAddFamily() ? '1' : '0';
+        res[4] = services.isAffectionCondom() ? '1' : '0';
+        res[5] = services.isAffectionNoCondom() ? '1' : '0';
+        res[6] = services.isAffectionDeep() ? '1' : '0';
+        res[7] = services.isAffectionCar() ? '1' : '0';
+        res[8] = services.isAffectionCun() ? '1' : '0';
+        res[9] = services.isAffectionAn() ? '1' : '0';
+        res[10] = services.isFinishMouth() ? '1' : '0';
+        res[11] = services.isFinishFace() ? '1' : '0';
+        res[12] = services.isFinishChest() ? '1' : '0';
+        res[13] = services.isBdsmBondage() ? '1' : '0';
+        res[14] = services.isBdsmMistress() ? '1' : '0';
+        res[15] = services.isBdsmRpGames() ? '1' : '0';
+        res[16] = services.isBdsmEasy() ? '1' : '0';
+        res[17] = services.isBdsmFlogging() ? '1' : '0';
+        res[18] = services.isBdsmSlave() ? '1' : '0';
+        res[19] = services.isBdsmFetish() ? '1' : '0';
+        res[20] = services.isBdsmTrumping() ? '1' : '0';
+        res[21] = services.isExtremeStrapon() ? '1' : '0';
+        res[22] = services.isExtremeToys() ? '1' : '0';
+        res[23] = services.isStripProf() ? '1' : '0';
+        res[24] = services.isStripAmateur() ? '1' : '0';
+        res[25] = services.isMassageClassic() ? '1' : '0';
+        res[26] = services.isMassageProfessional() ? '1' : '0';
+        res[27] = services.isMassageRelax() ? '1' : '0';
+        res[28] = services.isMassageThai() ? '1' : '0';
+        res[29] = services.isMassageUrological() ? '1' : '0';
+        res[30] = services.isMassageErotic() ? '1' : '0';
+        res[31] = services.isMassageSakura() ? '1' : '0';
+        res[32] = services.isLesbiLight() ? '1' : '0';
+        res[33] = services.isLesbiFull() ? '1' : '0';
+        res[34] = services.isFistingAnal() ? '1' : '0';
+        res[35] = services.isFistingClassic() ? '1' : '0';
+        res[36] = services.isGoldenRainIn() ? '1' : '0';
+        res[37] = services.isGoldenRainOut() ? '1' : '0';
+        res[38] = services.isAddEscort() ? '1' : '0';
+        res[39] = services.isAddPhoto() ? '1' : '0';
+        res[40] = services.isAddFamily() ? '1' : '0';
 
         return String.valueOf(res);
     }
