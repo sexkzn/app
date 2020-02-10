@@ -7,7 +7,7 @@ import { Path } from '../../routes';
 const prepareValue = (value, postfix = '') =>
   `${defaultTo(value, 0)} ${postfix}`;
 
-function ProfilePageStats({ profiles, views, consumption }) {
+function ProfilePageStats({ views, consumption, inactive, active, count }) {
   return (
     <div className="profile-page__stats">
       <ProfileStatsBlock
@@ -28,15 +28,15 @@ function ProfilePageStats({ profiles, views, consumption }) {
         items={[
           {
             label: 'Всего:',
-            value: prepareValue(profiles.count, 'шт'),
+            value: prepareValue(count, 'шт'),
           },
           {
             label: 'Активные:',
-            value: prepareValue(profiles.active, 'шт'),
+            value: prepareValue(active, 'шт'),
           },
           {
             label: 'Отключенные:',
-            value: prepareValue(profiles.inactive, 'шт'),
+            value: prepareValue(inactive, 'шт'),
           },
         ]}
       />

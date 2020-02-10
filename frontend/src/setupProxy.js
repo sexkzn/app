@@ -6,6 +6,16 @@ module.exports = function(app) {
     changeOrigin: true,
   }));
 
+  app.use(proxy('/register', {
+    target: 'http://localhost:8080/',
+    changeOrigin: true,
+  }));
+
+  app.use(proxy('/config', {
+    target: 'http://localhost:8080/',
+    changeOrigin: true,
+  }));
+
   // app.get('/api/profile', (req, res) => {
   //   res.setHeader('Content-Type', 'application/json');
   //   res.send(
@@ -31,10 +41,10 @@ module.exports = function(app) {
   //   );
   // });
 
-  app.use(proxy('/api', {
-    target: 'http://localhost:8080/',
-    changeOrigin: true,
-  }));
+  // app.use(proxy('/api', {
+  //   target: 'http://localhost:8080/',
+  //   changeOrigin: true,
+  // }));
   // app.use(
   //   proxy('/api', {
   //     target: 'https://dosugkzn.xyz/',

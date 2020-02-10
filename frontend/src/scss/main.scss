@@ -56,8 +56,10 @@ p {
 @import "components/input-rates";
 @import "components/textarea";
 @import "components/captcha";
+@import "components/verifier-input";
 
 @import "blocks/main-page";
 @import "blocks/profile-page";
 @import "blocks/edit-profile-page";
 @import "components/register-form";
+@import "blocks/verify-form";

@@ -8,13 +8,14 @@ import Modal from '../Modal';
 import RegisterForm from '../RegisterForm/RegisterForm';
 import useLogin from '../../hooks/useLogin';
 import { Path } from '../../routes';
+import VerifyEmail from "../RegisterForm/VerifyEmail";
 
 const AuthBlock = ({ visible, changeVisible }) => {
   const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
   const [registerIsOpen, setRegisterIsOpen] = useState(false);
 
-  const { login: signIn, register: signUp } = useLogin();
+  const { login: signIn, register: signUp, showCode, email, sendCode } = useLogin();
 
   const onLoginChange = (e) => {
     const value = e.target.value;
@@ -34,7 +35,7 @@ const AuthBlock = ({ visible, changeVisible }) => {
   };
 
   const onLogin = () => {
-    signIn(login, password, () => changeVisible(false));
+    signIn(login, password);
   };
 
   const onRegister = (values) => {
@@ -43,7 +44,7 @@ const AuthBlock = ({ visible, changeVisible }) => {
 
   return [
     <Modal isOpen={registerIsOpen} changeVisible={toggleRegisterModal}>
-      <RegisterForm onSubmit={onRegister} changeVisible={toggleRegisterModal} />
+      {showCode ? <VerifyEmail sendCode={sendCode} email={email} changeVisible={toggleRegisterModal} /> : <RegisterForm onSubmit={onRegister} changeVisible={toggleRegisterModal} />}
     </Modal>,
     visible ? (
       <div className="user-box__auth">

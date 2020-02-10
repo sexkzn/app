@@ -14,7 +14,7 @@ function ProfilePage(props) {
     <div className="profile-page">
       <ProfileHeader
         className="profile-page__header"
-        title={`Личный кабинет, username`}
+        title={`Личный кабинет, ${data.username}`}
       />
       <ProfilePageStats {...data.stats} />
       <div className="profile-page__info">

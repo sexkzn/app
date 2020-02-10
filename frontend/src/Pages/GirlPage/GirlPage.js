@@ -8,6 +8,7 @@ import Seo from '../../components/Seo';
 import Title from '../../components/Title';
 import Loader from '../../components/Loader';
 import Breadcrumbs from '../../components/Breadcrumbs';
+import { Ul, Li } from '../../components/Ul';
 
 const settings = {
   dots: true,
@@ -69,6 +70,25 @@ function GirlPage() {
           </Slider>
           <div className="girl-page__description">
             {get(data, 'description')}
+          </div>
+          <div className="girl-page__services">
+            <div className="girl-page__main-info girl-main-info">
+              <div className="girl-main-info__title">Описание:</div>
+              <Ul>
+                <Li>Город: Казань</Li>
+                <Li>Район: Авиастроительный</Li>
+                <Li>Возраст: 22</Li>
+                <Li>Рост: 188</Li>
+                <Li>Вес: 65</Li>
+                <Li>Грудь: 3</Li>
+                <Li>Цвет волос: Русая</Li>
+                <Li>Внешность: Славянская</Li>
+                <Li>Национальность: Русская</Li>
+              </Ul>
+            </div>
+            <div className="girl-page__costs girl-costs">
+              <div className="girl-costs__title">Стоимость</div>
+            </div>
           </div>
         </div>
       </div>

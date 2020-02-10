@@ -7,6 +7,7 @@ import InputMask from './InputMask';
 import CheckboxGroup from './CheckboxGroup';
 import InputRates from './InputRates';
 import Textarea from './Textarea';
+import VerifierInput from "./VerifierInput";
 
 export default {
   InputText,
@@ -18,4 +19,5 @@ export default {
   CheckboxGroup,
   InputRates,
   Textarea,
+  VerifierInput
 };
