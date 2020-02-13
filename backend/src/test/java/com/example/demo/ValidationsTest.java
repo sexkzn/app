@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import com.example.demo.exception.ValidationException;
 import com.example.demo.util.Validations;
 import org.junit.Test;
 

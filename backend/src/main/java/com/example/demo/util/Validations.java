@@ -1,6 +1,6 @@
 package com.example.demo.util;
 
-import com.example.demo.ValidationException;
+import com.example.demo.exception.ValidationException;
 import com.example.demo.entity.UserEntity;
 
 public abstract class Validations {
