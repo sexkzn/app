@@ -1,0 +1,29 @@
+.profile-layout {
+  @include container();
+
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+
+  &__header {
+    width: 100%;
+  }
+
+  &__sidebar {
+    width: 260px;
+
+    margin-right: 2rem;
+
+    & .profile-stats-block {
+      width: 100%;
+    }
+  }
+
+  &__main {
+    width: calc(100% - 260px - 2rem);
+  }
+
+  &__stats {
+    margin-bottom: 2rem;
+  }
+}

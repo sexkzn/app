@@ -1,8 +1,9 @@
 const Api = {
+  MAIN: '/',
   girls: '/api/profiles?page=:page',
   girl: '/api/profiles/:id',
   profile: '/api/profile',
-  profiles: '/profiles',
+  profiles: '/api/profiles',
   profilesEdit: '/profiles/edit/:id',
   profilesDelete: '/profiles/delete/:id',
   login: '/login',
@@ -10,7 +11,8 @@ const Api = {
   register: '/register',
   captcha: '/captcha',
   profileCreate: '/api/profiles',
-  verify: '/verify'
+  verify: '/verify',
+  logout: '/logout',
 };
 
 export default Api;

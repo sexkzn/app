@@ -3,7 +3,7 @@ import { reduxForm } from 'redux-form';
 import map from 'lodash/map';
 import Options from './Options';
 import Field from '../Field';
-import Button from '../Button';
+import Button from '../snippets/Button';
 import controlsConfig from './controlsConfig';
 
 function HeaderFilters() {

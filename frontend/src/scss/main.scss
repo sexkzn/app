@@ -2,6 +2,7 @@
 @import "~animate.css";
 $fa-font-path: "~font-awesome/fonts";
 @import '~font-awesome/scss/font-awesome';
+@import '~rc-dropdown/assets/index.css';
 
 * {
   font-family: 'Montserrat', sans-serif;
@@ -23,6 +24,7 @@ p {
 
 @import "mixins";
 
+@import "blocks/profile-layout";
 @import "components/button";
 @import "components/input-text";
 @import "components/modal";
@@ -59,7 +61,6 @@ p {
 @import "components/verifier-input";
 
 @import "blocks/main-page";
-@import "blocks/profile-page";
 @import "blocks/edit-profile-page";
 @import "components/register-form";
 @import "blocks/verify-form";

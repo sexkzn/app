@@ -13,25 +13,48 @@
     }
   }
 
-  &__auth {
+  &__auth,
+  &__profile {
     position: absolute;
-    top: calc(100% + 20px);
+    top: 0;
     right: 15px;
     width: 250px;
     padding: 20px;
     background-color: #ffffff;
-    box-shadow: 4px 4px 13px -6px rgba(0, 0, 0, 0.75);
+    box-shadow: 4px 4px 25px -6px rgba(0, 0, 0, 0.75);
 
     &::before {
       content: '';
       position: absolute;
       right: 10px;
+      left: auto;
       top: -10px;
       width: 0;
       height: 0;
       border-style: solid;
       border-width: 0 10px 10px 10px;
       border-color: transparent transparent #FFF transparent;
+    }
+  }
+
+  &__profile {
+    width: auto;
+    padding: 0;
+
+    &-link {
+      display: block;
+
+      padding: 10px 40px;
+
+      font-size: 14px;
+      color: black;
+      text-decoration: none;
+
+      cursor: pointer;
+    }
+
+    & .user-box__row {
+      margin-bottom: 0;
     }
   }
 

@@ -1,19 +1,24 @@
 import React from 'react';
 import map from 'lodash/map';
+import isEmpty from "lodash/isEmpty";
+import get from 'lodash/get';
+
 import Field from '../../Field/Field';
 
-function CheckboxList({ key, list, onChange }) {
+function CheckboxList({ key, list, checked, onChange, formatItemsToIds }) {
   return (
     <div className="checkbox-group__list">
-      {map(list, ({ id, label, value, subItems }, index) => (
+      {map(list, ({ id, label, value, subItems, single }, index) => (
         <div className="checkbox-group__item" key={`${key}${index}`}>
-          <Field
-            src="Checkbox"
-            label={label}
-            value={value}
-            labelPosition="right"
-            onChange={(event) => id && onChange(id, event)}
-          />
+          {
+            single ? <Field
+              src="Checkbox"
+              label={label}
+              value={value}
+              labelPosition="right"
+              onChange={onChange(!isEmpty(subItems) ? formatItemsToIds(subItems) : id)}
+            /> : <div className='checkbox-group__item-label'>{label}</div>
+          }
           <div className="checkbox-group__sub-items">
             {map(subItems, ({ id, label, value }, index) => (
               <Field
@@ -22,7 +27,7 @@ function CheckboxList({ key, list, onChange }) {
                 label={label}
                 value={value}
                 labelPosition="right"
-                onChange={(event) => onChange(id, event)}
+                onChange={onChange(id)}
               />
             ))}
           </div>

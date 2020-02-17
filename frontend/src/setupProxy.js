@@ -1,103 +1,60 @@
 const proxy = require('http-proxy-middleware');
 
 module.exports = function(app) {
-  app.use(proxy('/login', {
-    target: 'http://localhost:8080/',
-    changeOrigin: true,
-  }));
+  app.use(
+    proxy('/login', {
+      target: 'http://localhost:8080/',
+      changeOrigin: true,
+    })
+  );
 
-  app.use(proxy('/register', {
-    target: 'http://localhost:8080/',
-    changeOrigin: true,
-  }));
+  app.use(
+    proxy('/logout', {
+      target: 'http://localhost:8080/',
+      changeOrigin: true,
+    })
+  );
 
-  app.use(proxy('/config', {
-    target: 'http://localhost:8080/',
-    changeOrigin: true,
-  }));
+  app.use(
+    proxy('/register', {
+      target: 'http://localhost:8080/',
+      changeOrigin: true,
+    })
+  );
 
-  // app.get('/api/profile', (req, res) => {
-  //   res.setHeader('Content-Type', 'application/json');
-  //   res.send(
-  //     JSON.stringify({
-  //       stats: {
-  //         profiles: {
-  //           count: 10,
-  //           active: 7,
-  //           inactive: 3,
-  //         },
-  //         views: {
-  //           today: 20,
-  //           yesterday: 21,
-  //           all: 412,
-  //         },
-  //         consumption: {
-  //           forDay: 50,
-  //           forWeek: 350,
-  //           forMonth: 1500,
-  //         },
-  //       },
-  //     })
-  //   );
-  // });
+  app.use(
+    proxy('/config', {
+      target: 'http://localhost:8080/',
+      changeOrigin: true,
+    })
+  );
 
-  // app.use(proxy('/api', {
-  //   target: 'http://localhost:8080/',
-  //   changeOrigin: true,
-  // }));
-  // app.use(
-  //   proxy('/api', {
-  //     target: 'https://dosugkzn.xyz/',
-  //     changeOrigin: true,
-  //   })
-  // );
-  // app.use(
-  //   proxy('/login', {
-  //     target: 'https://dosugkzn.xyz/',
-  //     changeOrigin: true,
-  //   })
-  // );
+  app.post('/api/profiles', (req, res) => {
+    res.json({
+      id: 123,
+    });
+  });
 
-  // app.get('/config', (req, res) => {
-  //   res.setHeader('Content-Type', 'application/json');
-  //   res.send({
-  //     username: 'Shkura',
-  //     email: 'shkura@rembler.ru',
-  //     balance: 1023,
-  //     roles: ['admin']
-  //   });
-  // });
-
-  //
-  // app.get('/profiles', (req, res) => {
-  //   res.setHeader('Content-Type', 'application/json');
-  //   res.send(
-  //     JSON.stringify([
-  //       {
-  //         id: 1,
-  //         name: 'Test',
-  //       },
-  //       {
-  //         id: 2,
-  //         name: 'Fuck you',
-  //       },
-  //       {
-  //         id: 3,
-  //         name: 'azaza',
-  //       },
-  //     ])
-  //   );
-  // });
-  //
-  // app.get('/profiles/1', (req, res) => {
-  //   res.setHeader('Content-Type', 'application/json');
-  //   res.send(
-  //     JSON.stringify([
-  //       {
-  //         id: 1,
-  //         name: 'ahahah',
-  //       },
-  //     ])
-  //   );
-  // });
+  app.get('/api/profiles', (req, res) => {
+    res.json([
+      {
+        id: 1,
+        name: 'Анна',
+        status: 'waitForImages',
+        phone: '898989888291',
+        age: 18,
+        growth: 180,
+        weight: 60,
+        boobsSize: 3,
+        views: {
+          yesterday: 100,
+          today: 10,
+        },
+        forHour: 5000,
+        forTwoHours: 10000,
+        forNight: 30000,
+        anal: 5000,
+      },
+    ]);
+  });
 };

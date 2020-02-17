@@ -1,19 +1,22 @@
 import React from 'react';
 
-import MainPage from '../Pages/MainPage';
-import GirlPage from '../Pages/GirlPage';
-import ProfilePage from '../Pages/ProfilePage';
-import ProfileListPage from '../Pages/ProfilesListPage';
-import AddProfilePage from '../Pages/AddProfilePage';
-import EditProfilePage from '../Pages/EditProfilePage';
+import ProfileScope from '../pages/profile';
+
+import ProfilePage from '../pages/profile/ProfilePage';
+import MainPage from '../pages/main/MainPage';
+import GirlPage from '../pages/main/GirlPage';
+import ProfileListPage from '../pages/profile/ProfilesListPage';
+import AddProfilePage from '../pages/profile/AddProfilePage';
+import EditProfilePage from '../pages/profile/EditProfilePage';
 
 export const Path = {
   MAIN: '/',
   GIRL: '/girl/:id',
   PROFILE: '/profile',
-  ADD: '/add',
-  EDIT: '/edit/:id',
+  ADD: '/profile/add',
+  EDIT: 'profile/edit/:id',
   PROFILES: '/profile/list',
+  ADD_IMAGES: '/profile/:id/images',
 };
 
 const routes = [
@@ -23,27 +26,34 @@ const routes = [
     render: (props) => <MainPage {...props} />,
   },
   {
+    path: '/:scope(profile)',
+    exact: true,
+    render: (props) => <ProfileScope {...props} />,
+  },
+  {
     path: Path.GIRL,
     render: (props) => <GirlPage {...props} />,
   },
+];
+
+const profileRoutes = [
   {
-    path: Path.PROFILE,
-    exact: true,
+    path: '/',
     render: (props) => <ProfilePage {...props} />,
   },
   {
-    path: Path.PROFILES,
+    path: '/list',
     render: (props) => <ProfileListPage {...props} />,
   },
   {
-    path: Path.ADD,
+    path: '/add',
     render: (props) => <AddProfilePage {...props} />,
   },
   {
-    path: Path.EDIT,
+    path: '/edit/:id',
     render: (props) => <EditProfilePage {...props} />,
-    exact: true,
   },
 ];
 
+export { profileRoutes };
 export default routes;

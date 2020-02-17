@@ -8,8 +8,8 @@ import routes from './routes';
 
 import map from 'lodash/map';
 
-import ConfigProvider from './components/ConfigProvider';
-import Layout from './components/Layout';
+import ConfigProvider from './components/core/ConfigProvider';
+import Layout from './components/layout/Layout';
 
 import './scss/main.scss';
 import 'rc-slider/assets/index.css';

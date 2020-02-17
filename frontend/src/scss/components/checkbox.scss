@@ -39,9 +39,14 @@
 
     &__item {
       flex-grow: 1;
+      margin-bottom: 15px;
 
       & .field__control-container {
         flex-grow: 0;
+      }
+
+      &-label {
+        margin-bottom: 10px;
       }
     }
 
