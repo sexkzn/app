@@ -82,9 +82,10 @@ public abstract class Mappers {
         return entity;
     }
 
-    public static ProfileEntity map(ProfileCreateRequest request) {
+    public static ProfileEntity map(ProfileCreateRequest request, UserEntity user) {
         if (request == null) return null;
         ProfileEntity entity = new ProfileEntity();
+        entity.setUser(user);
         // TODO: 05.02.2020
         entity.setServices(servicesToString(request.getServices()));
 

@@ -11,12 +11,51 @@
         </sql>
     </changeSet>
 
+    <changeSet author="me" id="create_user">
+        <sql>
+            create table demo.user(
+            id uuid NOT NULL DEFAULT uuid_generate_v4() PRIMARY KEY,
+            creation_date timestamp NOT NULL,
+            last_action_date timestamp NOT NULL,
+
+            username varchar not null UNIQUE,
+            email varchar not null,
+            password varchar not null,
+            enabled boolean not null,
+            roles varchar
+            );
+        </sql>
+    </changeSet>
+
+
+    <changeSet author="me" id="insert_admin">
+        <sql>
+            insert into demo.user(id, creation_date, last_action_date, username, email, password, enabled, roles)
+            values('fc2ccec8-5265-11ea-8d77-2e728ce88125', current_timestamp, current_timestamp, 'admin', 'admin@admin.com', '$2a$10$Au8.v4ZqqUhMJZpCyXtlZ.6wePXoMGQ.ordjo6ay00a6azxYZUZZO', true, 'admin');
+        </sql>
+    </changeSet>
+
+    <changeSet author="me" id="create_table_reg_session">
+        <sql>
+            create table demo.reg_session(
+            id uuid NOT NULL DEFAULT uuid_generate_v4() primary key,
+            creation_date timestamp NOT NULL,
+            last_action_date timestamp NOT NULL,
+
+            username varchar not null,
+            code varchar not null
+            );
+        </sql>
+    </changeSet>
+
     <changeSet author="me" id="create_profile">
         <sql>
             CREATE TABLE demo.profile (
             id uuid NOT NULL DEFAULT uuid_generate_v4(),
             creation_date timestamp NOT NULL,
             last_action_date timestamp NOT NULL,
+
+            user_id uuid NOT NULL,
 
             ext_id integer,
             name varchar,
@@ -37,7 +76,8 @@
             photos varchar,
             services varchar,
 
-            CONSTRAINT profile_pk PRIMARY KEY (id)
+            CONSTRAINT profile_pk PRIMARY KEY (id),
+            FOREIGN KEY (user_id) REFERENCES demo.user (id) ON DELETE CASCADE
             );
 
 
@@ -48,41 +88,6 @@
         <sqlFile path="data/init_profiles.sql"/>
     </changeSet>
 
-    <changeSet author="me" id="create_user">
-        <sql>
-            create table demo.user(
-            id uuid NOT NULL DEFAULT uuid_generate_v4(),
-            creation_date timestamp NOT NULL,
-            last_action_date timestamp NOT NULL,
 
-            username varchar not null primary key,
-            email varchar not null,
-            password varchar not null,
-            enabled boolean not null,
-            roles varchar
-            );
-        </sql>
-    </changeSet>
-
-
-    <changeSet author="me" id="insert_admin">
-        <sql>
-            insert into demo.user(creation_date, last_action_date, username, email, password, enabled, roles)
-            values(current_timestamp, current_timestamp, 'admin', 'admin@admin.com', '$2a$10$Au8.v4ZqqUhMJZpCyXtlZ.6wePXoMGQ.ordjo6ay00a6azxYZUZZO', true, 'admin');
-        </sql>
-    </changeSet>
-
-    <changeSet author="me" id="create_table_reg_session">
-        <sql>
-            create table demo.reg_session(
-            id uuid NOT NULL DEFAULT uuid_generate_v4() primary key,
-            creation_date timestamp NOT NULL,
-            last_action_date timestamp NOT NULL,
-
-            username varchar not null,
-            code varchar not null
-            );
-        </sql>
-    </changeSet>
 
 </databaseChangeLog>
