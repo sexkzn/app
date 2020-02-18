@@ -32,6 +32,22 @@ public class ProfileRestService {
         return profileRepository.findAll(pageable).map(Mappers::mapSimple);
     }
 
+    @CrossOrigin(origins = "*")
+    @GetMapping(path = "/api/my_profiles")
+    public Page<Profile> findAllMyProfiles(@PageableDefault Pageable pageable, HttpServletResponse response, UsernamePasswordAuthenticationToken userToken) {
+        if (userToken == null || userToken.getName() == null) {
+            response.setStatus(HttpStatus.BAD_REQUEST.value());
+            return null;
+        }
+        return profileRepository.findByUserId(pageable, userRepository.findByUsername(userToken.getName()).getId()).map(Mappers::mapSimple);
+    }
+
+    @CrossOrigin(origins = "*")
+    @GetMapping(path = "/api/my_profiles/{id}")
+    public Profile findOneByUserId(@PathVariable("id") String id) {
+        return Mappers.mapFull(profileRepository.findById(UUID.fromString(id)).orElse(null));
+    }
+
 
     @CrossOrigin(origins = "*")
     @GetMapping(path = "/api/profiles/{id}")
