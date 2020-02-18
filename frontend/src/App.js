@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Provider } from 'react-redux';
+import { toast } from 'react-toastify';
 import configureStore from './store';
 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
@@ -13,6 +14,8 @@ import Layout from './components/layout/Layout';
 
 import './scss/main.scss';
 import 'rc-slider/assets/index.css';
+
+toast.configure();
 
 function App() {
   const store = configureStore();

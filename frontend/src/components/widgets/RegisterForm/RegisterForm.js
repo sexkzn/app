@@ -20,7 +20,11 @@ function RegisterFormModal({
     <Modal isOpen={isOpen} changeVisible={changeVisible}>
       <div className="profile-form">
         {!showCode ? (
-          <ProfileForm onSubmit={onSubmit} changeVisible={changeVisible} />
+          <ProfileForm
+            onSubmit={onSubmit}
+            changeVisible={changeVisible}
+            label="Регистрация"
+          />
         ) : (
           <VerifyEmail
             email={email}

@@ -11,7 +11,7 @@ const useLogin = () => {
 
   const handleGetUser = () => dispatch(getUser());
   const login = ({ login, password }) => dispatch(loginAction(login, password));
-  const register = (body, onSuccess) =>
+  const register = (body, onSuccess, onError) =>
     dispatch(
       fetchData({
         url: Api.register,
@@ -24,6 +24,9 @@ const useLogin = () => {
         },
         onSuccess: () => {
           if (isFunction(onSuccess)) onSuccess();
+        },
+        onError: (err) => {
+          if (isFunction(onError)) onError(err);
         },
       })
     );

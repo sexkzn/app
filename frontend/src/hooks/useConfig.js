@@ -10,7 +10,9 @@ const useConfig = () => {
 
   const getUserFromServer = () => dispatch(getUser());
 
-  useEffect(() => getUserFromServer(), []);
+  useEffect(() => {
+    getUserFromServer();
+  }, []);
 
   return user;
 };

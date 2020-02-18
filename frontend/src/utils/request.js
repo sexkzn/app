@@ -7,7 +7,8 @@ const parseResponse = (response) =>
     body,
   }));
 
-const checkStatus = ({ status, statusText, body }) => {
+const checkStatus = ({ response, body }) => {
+  const { statusText, status } = response;
   let json;
   try {
     json = JSON.parse(body);
@@ -20,5 +21,5 @@ const checkStatus = ({ status, statusText, body }) => {
 
 export default (url, options = {}) =>
   fetch(url, options)
-  .then(parseResponse)
-  .then(checkStatus);
+    .then(parseResponse)
+    .then(checkStatus);
