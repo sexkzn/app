@@ -64,7 +64,7 @@ function MainPage(props) {
                         priceOne={priceInOne}
                         priceTwo={priceInTwo}
                         priceNight={priceInNight}
-                        img={`http://localhost:8080${avatar}`}
+                        img={`${process.env.PUBLIC_URL}${avatar}`}
                         age={age}
                         weight={weight}
                         boobsSize={boobsSize}

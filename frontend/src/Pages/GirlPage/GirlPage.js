@@ -25,7 +25,7 @@ function GirlPage() {
   const [photoIndex, setPhotoIndex] = useState(0);
   const photos = map(
     get(data, 'photos', []),
-    (url) => `http://localhost:8080${url}`
+    (url) => `${process.env.PUBLIC_URL}${url}`
   );
   const items = [
     {
