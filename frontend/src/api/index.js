@@ -1,9 +1,9 @@
 const Api = {
   MAIN: '/',
   girls: '/api/profiles?page=:page',
-  girl: '/api/profiles/:id',
+  girl: '/api/my_profiles/:id',
   profile: '/api/profile',
-  profiles: '/api/profiles',
+  profiles: '/api/my_profiles',
   profilesEdit: '/profiles/edit/:id',
   profilesDelete: '/profiles/delete/:id',
   login: '/login',

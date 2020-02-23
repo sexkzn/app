@@ -35,7 +35,7 @@ export default (state = defaultState, action) => {
         [action.payload.id]: {
           ...state[action.payload.id],
           id: action.payload.id,
-          datasource: action.payload.datasource,
+          datasource: action.payload.content,
         },
       });
     default:

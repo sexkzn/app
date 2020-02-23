@@ -1,7 +1,5 @@
 import React from 'react';
 
-import ProfileScope from '../pages/profile';
-
 import ProfilePage from '../pages/profile/ProfilePage';
 import MainPage from '../pages/main/MainPage';
 import GirlPage from '../pages/main/GirlPage';
@@ -26,23 +24,16 @@ const routes = [
     render: (props) => <MainPage {...props} />,
   },
   {
-    path: '/:scope(profile)',
+    path: '/profile',
     exact: true,
-    render: (props) => <ProfileScope {...props} />,
+    render: (props) => <ProfilePage {...props} />,
   },
   {
     path: Path.GIRL,
     render: (props) => <GirlPage {...props} />,
   },
-];
-
-const profileRoutes = [
   {
-    path: '/',
-    render: (props) => <ProfilePage {...props} />,
-  },
-  {
-    path: '/list',
+    path: '/profile/list',
     render: (props) => <ProfileListPage {...props} />,
   },
   {
@@ -54,6 +45,8 @@ const profileRoutes = [
     render: (props) => <EditProfilePage {...props} />,
   },
 ];
+
+const profileRoutes = [];
 
 export { profileRoutes };
 export default routes;

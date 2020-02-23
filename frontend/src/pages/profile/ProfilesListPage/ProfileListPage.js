@@ -3,9 +3,8 @@ import React from 'react';
 import Title from '../../../components/snippets/Title';
 import Table from '../../../components/widgets/Table/Table';
 
-import profilesListColumns from './profilesListColumns';
-
 import useProfilesListPage from '../../../hooks/useProfilesListPage';
+import profilesListColumns from './profilesListColumns';
 
 function ProfileListPage(props) {
   const { profilesList, onEdit, onDelete } = useProfilesListPage();

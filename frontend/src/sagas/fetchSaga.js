@@ -1,5 +1,5 @@
 import { call, put, takeEvery } from 'redux-saga/effects';
-
+import has from 'lodash/has';
 import pathToRegexp from 'path-to-regexp';
 
 import { FETCH } from '../constants/fetch';
@@ -20,10 +20,12 @@ export function* fetchData({ payload }) {
   try {
     const { url, options, mappingOptions, onSuccess } = payload;
     yield setLoading(id, true);
-    const datasource = yield call(fetchSaga, url, options, mappingOptions);
+    const response = yield call(fetchSaga, url, options, mappingOptions);
 
-    if (id) yield put(setDatasource({ id, datasource }));
-    if (typeof onSuccess === 'function') onSuccess(datasource);
+    const content = has(response, 'content') ? response.content : response;
+
+    if (id) yield put(setDatasource({ id, content }));
+    if (typeof onSuccess === 'function') onSuccess(content);
   } catch (e) {
     const { onError } = payload;
 

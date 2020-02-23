@@ -29,32 +29,10 @@ module.exports = function(app) {
     })
   );
 
-  app.post('/api/profiles', (req, res) => {
-    res.json({
-      id: 123,
-    });
-  });
-
-  app.get('/api/profiles', (req, res) => {
-    res.json([
-      {
-        id: 1,
-        name: 'Анна',
-        status: 'waitForImages',
-        phone: '898989888291',
-        age: 18,
-        growth: 180,
-        weight: 60,
-        boobsSize: 3,
-        views: {
-          yesterday: 100,
-          today: 10,
-        },
-        forHour: 5000,
-        forTwoHours: 10000,
-        forNight: 30000,
-        anal: 5000,
-      },
-    ]);
-  });
+  app.use(
+    proxy('/api', {
+      target: 'http://localhost:8080/',
+      changeOrigin: true,
+    })
+  );
 };

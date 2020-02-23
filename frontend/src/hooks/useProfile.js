@@ -1,16 +1,15 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import defaultTo from 'lodash/defaultTo';
 
-import { makeFetchDatasourceByIdSelector } from "../selectors/fetch";
-import {fetchData} from "../actions/fetch";
-import Api from "../api";
+import { userSelector } from '../selectors/user';
+import { fetchData } from '../actions/fetch';
+import Api from '../api';
 
 const FETCH_ID = 'profilePage';
 
 const useProfile = () => {
   const dispatch = useDispatch();
-  const data = useSelector(makeFetchDatasourceByIdSelector(FETCH_ID));
+  const user = useSelector(userSelector);
 
   useEffect(() => {
     dispatch(
@@ -22,7 +21,7 @@ const useProfile = () => {
   }, []);
 
   return {
-    data: defaultTo(data, {}) ,
+    user,
   };
 };
 

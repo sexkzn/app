@@ -3,6 +3,9 @@ import { SET_USER } from '../constants/user';
 const initialState = {
   login: null,
   role: null,
+  consumption: {},
+  stats: {},
+  views: {},
 };
 
 export default (state = initialState, action) => {

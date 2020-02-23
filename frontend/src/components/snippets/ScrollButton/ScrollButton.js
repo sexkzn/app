@@ -2,6 +2,7 @@ import React from 'react';
 import { animateScroll as scroll } from 'react-scroll';
 import { useWindowScroll } from 'react-use';
 import cn from 'classnames';
+
 import Button from '../Button';
 
 function ScrollButton() {

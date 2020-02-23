@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import { useParams } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
-import first from 'lodash/first';
 
 import { fetchData } from '../actions/fetch';
 import { makeFetchDatasourceByIdSelector } from '../selectors/fetch';
@@ -25,12 +24,31 @@ const useEditProfilePage = () => {
       })
     );
 
+  const updateProfile = (values) =>
+    dispatch(
+      fetchData({
+        id: PAGE_ID,
+        url: Api.girl,
+        mappingOptions: {
+          id,
+        },
+        options: {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(values),
+        },
+      })
+    );
+
   useEffect(() => {
     getEditProfile();
   }, []);
 
   return {
-    profile: first(datasource),
+    profile: datasource,
+    updateProfile,
   };
 };
 
