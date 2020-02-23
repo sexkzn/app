@@ -1,3 +1,9 @@
+Раздача статики nginx'ом.
+[Качаем](https://nginx.org/ru/download.html) и распаковываем nginx. Копируем nginx.conf в `$NGINX_ROOT$/conf`. 
+Собираем фронтенд и закидываем в `$NGINX_ROOT$/html`, в `$NGINX_ROOT$/html/images` надо положить фотки профилей. 
+Бэкенд запускаем на 8080 порту.
+
+
 Для запуска бэка нужно:
 
 * Качнуть и установить последнюю версию [maven](https://maven.apache.org/download.cgi)
