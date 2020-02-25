@@ -1,8 +1,9 @@
 import React from 'react';
+import cn from 'classnames';
 
-function MainNav(props) {
+function MainNav({ className, opened, isAuth }) {
   return (
-    <nav className="main-nav">
+    <nav className={cn('main-nav', className, { 'main-nav--opened': opened })}>
       <ul className="main-nav__list">
         <li className="main-nav__item">
           <a className="main-nav__link" href="">
@@ -19,11 +20,13 @@ function MainNav(props) {
             Элитные
           </a>
         </li>
-        <li className="main-nav__item">
-          <a className="main-nav__link" href="">
-            Добавить анкету
-          </a>
-        </li>
+        {isAuth && (
+          <li className="main-nav__item">
+            <a className="main-nav__link" href="">
+              Добавить анкету
+            </a>
+          </li>
+        )}
       </ul>
     </nav>
   );

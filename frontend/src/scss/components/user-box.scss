@@ -78,3 +78,24 @@
     }
   }
 }
+
+@media (max-width: 767px) {
+  .user-box {
+    &__link {
+      max-width: 110px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      padding: 5px;
+    }
+
+    &__auth {
+      width: 230px;
+      padding: 10px;
+    }
+
+    &__greeting {
+      display: none;
+    }
+  }
+}

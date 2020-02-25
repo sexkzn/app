@@ -17,7 +17,7 @@ function Card({
 }) {
   return (
     <article className={cn('card', className)}>
-      <NavLink to={`/girl/${id}`}>
+      <NavLink to={`/girl/${id}`} target="_blank">
         <img className="card__image" src={img} alt={title} />
       </NavLink>
       <div className="card__content">

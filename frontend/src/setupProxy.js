@@ -35,4 +35,11 @@ module.exports = function(app) {
       changeOrigin: true,
     })
   );
+
+  app.use(
+    proxy('/images', {
+      target: 'http://localhost:8080/',
+      changeOrigin: true,
+    })
+  );
 };

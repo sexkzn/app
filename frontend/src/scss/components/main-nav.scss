@@ -22,3 +22,17 @@
     }
   }
 }
+
+@media (max-width: 767px) {
+  .main-nav {
+    display: none;
+
+    &--opened {
+      display: block;
+    }
+
+    &__list {
+      flex-direction: column;
+    }
+  }
+}

@@ -7,7 +7,7 @@ import { Path } from '../../../routes';
 function UserInfo({ logout, username }) {
   return (
     <Dropdown
-      trigger={['hover']}
+      trigger={['click']}
       animation="slide-up"
       overlay={
         <Menu className="user-box__profile">
@@ -24,7 +24,9 @@ function UserInfo({ logout, username }) {
         </Menu>
       }
     >
-      <a className="user-box__link">Привет, {username}</a>
+      <a className="user-box__link">
+        <span className="user-box__greeting">Привет,</span> {username}
+      </a>
     </Dropdown>
   );
 }

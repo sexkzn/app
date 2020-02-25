@@ -2,8 +2,12 @@
 @import "~animate.css";
 $fa-font-path: "~font-awesome/fonts";
 @import '~font-awesome/scss/font-awesome';
+@import "~@fortawesome/fontawesome-free/scss/animated";
+@import "~@fortawesome/fontawesome-free/css/all.css";
 @import '~rc-dropdown/assets/index.css';
 @import '~react-toastify/dist/ReactToastify.css';
+@import "variables";
+@import "~hamburgers/_sass/hamburgers/hamburgers";
 
 * {
   font-family: 'Montserrat', sans-serif;
@@ -60,9 +64,11 @@ p {
 @import "components/textarea";
 @import "components/captcha";
 @import "components/verifier-input";
+@import "components/dropzone";
 
 @import "blocks/main-page";
 @import "blocks/edit-profile-page";
 @import "components/register-form";
 @import "blocks/verify-form";
 @import "blocks/profile-page";
+@import "blocks/add-pictures-page";

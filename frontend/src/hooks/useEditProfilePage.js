@@ -33,7 +33,7 @@ const useEditProfilePage = () => {
           id,
         },
         options: {
-          method: 'PUT',
+          method: 'UPDATE',
           headers: {
             'Content-Type': 'application/json',
           },

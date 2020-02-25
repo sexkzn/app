@@ -7,14 +7,14 @@ import useProfilesListPage from '../../../hooks/useProfilesListPage';
 import profilesListColumns from './profilesListColumns';
 
 function ProfileListPage(props) {
-  const { profilesList, onEdit, onDelete } = useProfilesListPage();
+  const { profilesList, onEdit, onAddPictures, onDelete } = useProfilesListPage();
 
   return (
     <div className="profiles-list-page">
       <Title className="profiles-list-page__title">Анкеты</Title>
       <Table
         className="profiles-list-page__table"
-        columns={profilesListColumns(onEdit, onDelete)}
+        columns={profilesListColumns(onEdit, onAddPictures, onDelete)}
         data={profilesList}
       />
     </div>

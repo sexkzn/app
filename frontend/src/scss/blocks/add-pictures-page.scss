@@ -1,0 +1,25 @@
+.add-pictures-page {
+  @include container();
+
+  &__dropzone {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  &__item {
+    padding-top: 1rem;
+    border-bottom: 1px solid #fed136;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  &__go-back {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 2rem;
+  }
+}

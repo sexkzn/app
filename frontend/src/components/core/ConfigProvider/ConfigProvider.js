@@ -3,7 +3,7 @@ import React from 'react';
 import useConfig from '../../../hooks/useConfig';
 
 function ConfigProvider({ children }) {
-  useConfig();
+  const { loading } = useConfig();
 
   return children;
 }

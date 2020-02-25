@@ -40,3 +40,17 @@
     }
   }
 }
+
+
+@media (max-width: 767px) {
+  .footer {
+    &__container {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    &__copyright {
+      margin-bottom: 10px;
+    }
+  }
+}

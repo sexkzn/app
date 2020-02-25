@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 import configureStore from './store';
 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import routes from './routes';
+import routes, { privateRoutes } from './routes';
 
 import map from 'lodash/map';
 
@@ -14,6 +14,7 @@ import Layout from './components/layout/Layout';
 
 import './scss/main.scss';
 import 'rc-slider/assets/index.css';
+import PrivateRoute from './components/core/PrivateRoute';
 
 toast.configure();
 
@@ -28,6 +29,9 @@ function App() {
             <Layout>
               {map(routes, (props, index) => (
                 <Route key={index} {...props} />
+              ))}
+              {map(privateRoutes, (props, index) => (
+                <PrivateRoute {...props} key={`private-page-${index}`} />
               ))}
             </Layout>
           </Switch>

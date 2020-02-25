@@ -1,0 +1,11 @@
+.dropzone {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+
+  border: 1px solid #fed136;
+
+  &__text {
+    margin-left: 1rem;
+  }
+}

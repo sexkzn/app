@@ -7,7 +7,7 @@ import Button from '../../snippets/Button';
 function UserAuth({ signIn, toggleRegisterModal }) {
   return (
     <Dropdown
-      trigger={['hover']}
+      trigger={['click']}
       animation="slide-up"
       overlay={
         <Menu className="user-box__auth">

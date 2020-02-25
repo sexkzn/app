@@ -1,9 +1,12 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
+import pathToRegexp from "path-to-regexp";
+
 import { fetchData } from '../actions/fetch';
 import { makeFetchDatasourceByIdSelector } from '../selectors/fetch';
 import Api from '../api';
+import { Path } from "../routes";
 
 const PAGE_ID = 'profilesList';
 
@@ -21,6 +24,7 @@ const useProfilesListPage = () => {
     );
 
   const onEdit = (id) => history.push(`/edit/${id}`);
+  const onAddPictures = (id) => history.push(pathToRegexp.compile(Path.ADD_IMAGES)({ id }));
 
   const onDelete = (id) =>
     dispatch(
@@ -44,6 +48,7 @@ const useProfilesListPage = () => {
   return {
     profilesList,
     onEdit,
+    onAddPictures,
     onDelete,
   };
 };

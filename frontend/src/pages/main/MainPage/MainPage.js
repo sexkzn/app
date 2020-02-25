@@ -8,7 +8,7 @@ import Loader from '../../../components/snippets/Loader';
 import LoadMore from '../../../components/snippets/LoadMore';
 
 const ListSize = {
-  MOBILE_AND_TABLE: 3,
+  MOBILE_AND_TABLE: 2,
   DESKTOP: 4,
 };
 

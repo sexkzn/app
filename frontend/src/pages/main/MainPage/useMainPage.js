@@ -28,7 +28,7 @@ const useMainPage = () => {
       setPageIsOver(true);
     }
 
-    setDatasource([...datasource, ...data.content]);
+    setDatasource([...datasource, ...data]);
   };
 
   const getData = () => {

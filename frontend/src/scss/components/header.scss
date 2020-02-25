@@ -59,9 +59,61 @@
       text-decoration: none;
     }
   }
+
+  &__burger {
+    display: none;
+
+    outline: none;
+  }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 767px) {
+  .header {
+    flex-wrap: wrap;
+    align-items: baseline;
+
+    &__bg-image {
+      height: auto;
+      padding-top: 58px;
+      background: #212529;
+    }
+
+    &__container {
+      padding: 13px 0;
+
+      background: #212529;
+      box-sizing: border-box;
+    }
+
+    &__brand {
+      width: auto;
+      order: 5;
+      margin-left: 10px;
+
+      & a {
+        font-size: 24px;
+      }
+    }
+
+    &__user-box {
+      order: 10;
+
+      margin-left: auto;
+    }
+
+    &__main-nav {
+      order: 15;
+    }
+
+    &__burger {
+      display: block;
+
+      padding: 0;
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
   .header {
     &__container {
       padding: 10px 0;
