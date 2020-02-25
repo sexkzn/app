@@ -10,7 +10,7 @@ function PrivateRoute(props) {
 
   useEffect(() => {
     if (!user.loading && !user.username) {
-      history.goBack();
+      // history.goBack();
     }
   }, [user]);
 
