@@ -41,7 +41,7 @@ const privateRoutes = [
     render: (props) => <ProfileListPage {...props} />,
   },
   {
-    path: '/add',
+    path: Path.ADD,
     render: (props) => <AddProfilePage {...props} />,
   },
   {

@@ -12,11 +12,9 @@ const useSendingPictures = () => {
   const history = useHistory();
 
   const fetchFiles = (url, files) => {
-    console.log(files);
     const formData = new FormData();
-    map(files, (file) => formData.append(file.name, file));
-    const data = new FormData();
-    data.append(files[0].name, files[0]);
+    map(files, (file) => formData.append('file', file));
+
     dispatch(
       fetchData({
         url,
@@ -25,10 +23,7 @@ const useSendingPictures = () => {
         },
         options: {
           method: 'POST',
-          headers: {
-            'Content-Type': 'multipart/form-data',
-          },
-          body: data,
+          body: formData,
         },
       })
     );

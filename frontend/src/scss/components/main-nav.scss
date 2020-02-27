@@ -26,6 +26,7 @@
 @media (max-width: 767px) {
   .main-nav {
     display: none;
+    width: 100%;
 
     &--opened {
       display: block;

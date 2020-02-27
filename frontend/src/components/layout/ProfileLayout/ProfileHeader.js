@@ -12,14 +12,16 @@ function ProfileHeader({ className, title }) {
   return (
     <div className={cn('profile-header', className)}>
       <Title className="profile-header__title">{title}</Title>
-      <div className="profile-header__balance">
-        <div className="profile-header__balance-value">
-          {balance && `Баланс: ${balance} руб.`}
+      {false && (
+        <div className="profile-header__balance">
+          <div className="profile-header__balance-value">
+            {balance && `Баланс: ${balance} руб.`}
+          </div>
+          <div className="profile-header__balance-up">
+            <Button color="primary">Пополнить баланс</Button>
+          </div>
         </div>
-        <div className="profile-header__balance-up">
-          <Button color="primary">Пополнить баланс</Button>
-        </div>
-      </div>
+      )}
     </div>
   );
 }

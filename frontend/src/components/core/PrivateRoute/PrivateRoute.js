@@ -1,18 +1,11 @@
-import React, { useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
-import { Route } from 'react-router-dom';
+import React from 'react';
+import { Route, Redirect } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+
 import { userSelector } from '../../../selectors/user';
 
 function PrivateRoute(props) {
-  const user = useSelector(userSelector);
-  const history = useHistory();
-
-  useEffect(() => {
-    if (!user.loading && !user.username) {
-      // history.goBack();
-    }
-  }, [user]);
+  const { isAuthorized } = useSelector(userSelector);
 
   return <Route {...props} />;
 }

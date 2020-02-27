@@ -26,3 +26,11 @@
     background-color: #fed136;
   }
 }
+
+@media (max-width: 767px) {
+  .ul {
+    &__title {
+      font-size: 0.9rem;
+    }
+  }
+}

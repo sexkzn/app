@@ -11,10 +11,9 @@ import map from 'lodash/map';
 
 import ConfigProvider from './components/core/ConfigProvider';
 import Layout from './components/layout/Layout';
+import PrivateRoute from './components/core/PrivateRoute';
 
 import './scss/main.scss';
-import 'rc-slider/assets/index.css';
-import PrivateRoute from './components/core/PrivateRoute';
 
 toast.configure();
 
