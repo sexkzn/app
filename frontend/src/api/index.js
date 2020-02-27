@@ -13,8 +13,8 @@ const Api = {
   profileCreate: '/api/profiles',
   verify: '/verify',
   logout: '/logout',
-  PICTURES: '/images/public/:id/upload',
-  VERIFY_PICTURES: '/images/private/:id/upload',
+  PICTURES: '/api/images/public/:id/upload',
+  VERIFY_PICTURES: '/api/images/private/:id/upload',
 };
 
 export default Api;
