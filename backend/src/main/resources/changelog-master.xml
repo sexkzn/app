@@ -73,7 +73,8 @@
             price_out_two integer,
             price_out_night integer,
             checked boolean,
-            photos varchar,
+            public_photos varchar,
+            private_photos varchar,
             services varchar,
 
             CONSTRAINT profile_pk PRIMARY KEY (id),

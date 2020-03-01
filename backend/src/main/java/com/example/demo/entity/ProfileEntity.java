@@ -63,8 +63,11 @@ public class ProfileEntity extends AbstractEntity {
     @Column(name = "checked")
     private Boolean checked;
 
-    @Column(name = "photos")
-    private String photos;
+    @Column(name = "public_photos")
+    private String publicPhotos;
+
+    @Column(name = "private_photos")
+    private String privatePhotos;
 
     @Column(name = "services")
     private String services;
