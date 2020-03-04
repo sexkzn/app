@@ -42,8 +42,8 @@ public abstract class Mappers {
     public static Profile mapFull(ProfileEntity entity) {
         if (entity == null) return null;
         Profile profile = mapCommon(entity);
-        if (entity.getPhotos() != null) {
-            List<String> photos = Arrays.asList(entity.getPhotos().split(","));
+        if (entity.getPublicPhotos() != null) {
+            List<String> photos = Arrays.asList(entity.getPublicPhotos().split(","));
             profile.setPhotos(photos.stream().filter(el -> !el.startsWith("/main.")).map(el -> "/images/" + profile.getId() + el).collect(Collectors.toList()));
         }
         return profile;
@@ -52,8 +52,8 @@ public abstract class Mappers {
     public static Profile mapSimple(ProfileEntity entity) {
         if (entity == null) return null;
         Profile profile = mapCommon(entity);
-        if (entity.getPhotos() != null) {
-            List<String> photos = Arrays.asList(entity.getPhotos().split(","));
+        if (entity.getPublicPhotos() != null) {
+            List<String> photos = Arrays.asList(entity.getPublicPhotos().split(","));
             List<String> l = photos.stream().filter(el -> el.startsWith("/main.")).map(el -> "/images/" + profile.getId() + el).collect(Collectors.toList());
             if (l.size() > 0)
                 profile.setAvatar(l.get(0));

@@ -13,9 +13,9 @@ const Api = {
   profileCreate: '/api/profiles',
   verify: '/verify',
   logout: '/logout',
-  PICTURES: '/images/public/:id/upload',
+  PICTURES: '/api/images/public/:id/upload',
+  VERIFY_PICTURES: '/api/images/private/:id/upload',
   PICTURES_DELETE: 'images/public/:id/delete',
-  VERIFY_PICTURES: '/images/private/:id/upload',
   GET_PICTURES: '/my_profiles/:id/pictures',
 };
 

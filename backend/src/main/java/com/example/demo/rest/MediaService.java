@@ -24,7 +24,7 @@ public class MediaService {
     private static final String USERS = "/users";
     private static final String PRIVATE = "/private";
 
-    @GetMapping(value = "/images/private/{profileId}/{filename}")
+    @GetMapping(value = "/api/images/private/{profileId}/{filename}")
     public void getPrivateImage(@PathVariable UUID profileId, @PathVariable String filename,
                                 HttpServletResponse response, UsernamePasswordAuthenticationToken userToken) throws IOException {
         if (userToken == null || userToken.getName() == null || profileId == null || filename == null) {
@@ -40,7 +40,7 @@ public class MediaService {
         }
     }
 
-    @PostMapping(value = "/images/private/{profileId}/{filename}/delete")
+    @PostMapping(value = "/api/images/private/{profileId}/{filename}/delete")
     public void delete(@PathVariable UUID profileId, @PathVariable String filename, HttpServletResponse response, UsernamePasswordAuthenticationToken userToken) throws IOException {
         if (userToken == null || userToken.getName() == null || profileId == null || filename == null) {
             response.setStatus(HttpStatus.BAD_REQUEST.value());
@@ -54,7 +54,7 @@ public class MediaService {
         }
     }
 
-    @PostMapping("/images/private/{profileId}/upload")
+    @PostMapping("/api/images/private/{profileId}/upload")
     public void handleFileUpload(@RequestParam("file") MultipartFile file, @PathVariable String profileId,
                                  UsernamePasswordAuthenticationToken token, HttpServletResponse response) throws IOException {
         if (token == null || token.getName() == null) {
