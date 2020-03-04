@@ -74,11 +74,12 @@
 
     &__bg-image {
       height: auto;
-      padding-top: 58px;
+      padding-top: 0;
       background: #212529;
     }
 
     &__container {
+      position: static;
       padding: 13px 0;
 
       background: #212529;

@@ -7,14 +7,14 @@ import StatsBlock from '../../snippets/StatsBlock';
 import Sidebar from '../Sidebar';
 import { Path } from '../../../routes';
 import defaultTo from 'lodash/defaultTo';
-import useProfile from '../../../hooks/useProfile';
+import useConfig from '../../../hooks/useConfig';
 
 const prepareValue = (value, postfix = '') =>
   `${defaultTo(value, 0)} ${postfix}`;
 
 function ProfileLayout({ className, children }) {
   const { title } = useGettingProfileInfo();
-  const { user } = useProfile();
+  const { user } = useConfig();
   const { views, consumption, stats } = user;
 
   return (

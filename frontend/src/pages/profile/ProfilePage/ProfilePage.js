@@ -1,6 +1,5 @@
 import React from 'react';
 
-import useProfile from '../../../hooks/useProfile';
 import ProfileLayout from '../../../components/layout/ProfileLayout';
 import { Ul, Li } from '../../../components/snippets/Ul';
 

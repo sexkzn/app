@@ -20,4 +20,54 @@
   &__description {
     margin: 20px 0;
   }
+
+  &__info {
+    width: 50%;
+
+    &-container {
+      display: flex;
+
+      padding: 1rem;
+    }
+
+    &-title {
+      font-size: 30px;
+      color: #212529;
+      font-weight: bold;
+    }
+  }
+
+  &__services {
+    &-title {
+      font-size: 30px;
+      color: #212529;
+      font-weight: bold;
+    }
+
+    &-list {
+      margin: 1rem 0;
+    }
+
+    &-category {
+      margin-bottom: 1rem;
+
+      &-title {
+        font-size: 18px;
+        color: #212529;
+      }
+
+      &-list {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      &-item {
+        padding: 10px;
+        margin: 5px 10px 0 0;
+        color: white;
+
+        background: #fed136;
+      }
+    }
+  }
 }

@@ -1,13 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
+import map from 'lodash/map';
+import Lightbox from 'react-image-lightbox';
+import { NavLink } from 'react-router-dom';
 
+import useGettingPictures from './useGettingPictures';
 import useSendingPictures from './useSendingPictures';
 import Title from '../../../components/snippets/Title';
 import { Ul, Li } from '../../../components/snippets/Ul';
 import DropZone from '../../../components/controls/DropZone';
 import Button from '../../../components/snippets/Button';
+import { Path } from '../../../routes';
 
-function AddPicturesPage(props) {
-  const { onSendPictures, onSendVerifyPictures, goBack } = useSendingPictures();
+function AddPicturesPage() {
+  const [isOpen, setOpen] = useState(false);
+  const [photoIndex, setPhotoIndex] = useState(0);
+  const { pictures, getData } = useGettingPictures();
+  const { onSendPictures, onSendVerifyPictures, onDelete } = useSendingPictures(
+    {
+      getData,
+    }
+  );
+
+  const nextSrc = pictures[(photoIndex + 1) % pictures.length];
+  const prevSrc =
+    pictures[(photoIndex + pictures.length - 1) % pictures.length];
 
   return (
     <div className="add-pictures-page">
@@ -20,6 +36,31 @@ function AddPicturesPage(props) {
           <Li>На фотографиях не должны быть водяные знаки или логотипы</Li>
           <Li>На фотографиях не должны быть видны гениталии</Li>
         </Ul>
+        <div className="add-pictures-page__images">
+          {map(pictures, ({ id, src }, index) => (
+            <div
+              className="add-pictures-page__image"
+              key={index}
+              onClick={() => {
+                setPhotoIndex(index);
+                setOpen(!isOpen);
+              }}
+            >
+              <img src={src} width={300} alt={`image-${index}`} />
+              <div className="add-pictures-page__image-action">
+                <Button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    onDelete(id);
+                  }}
+                  color="link"
+                >
+                  Удалить
+                </Button>
+              </div>
+            </div>
+          ))}
+        </div>
         <DropZone
           onChange={onSendPictures}
           className="add-pictures-page__dropzone"
@@ -27,7 +68,7 @@ function AddPicturesPage(props) {
       </div>
 
       <div className="add-pictures-page__item">
-        <Ul title="Загузка фото для проверки">
+        <Ul title="Загрузка фото для проверки">
           <Li>
             Для получения статуса "Проверено" необходимо загрузить проверочное
             фото с написанной на листе актуальной датой
@@ -44,10 +85,24 @@ function AddPicturesPage(props) {
       </div>
 
       <div className="add-pictures-page__go-back">
-        <Button color="primary" onClick={goBack}>
+        <NavLink className="button button--primary" to={Path.PROFILES}>
           Вернуться назад
-        </Button>
+        </NavLink>
       </div>
+      {isOpen && (
+        <Lightbox
+          mainSrc={pictures[photoIndex]}
+          nextSrc={nextSrc}
+          prevSrc={prevSrc}
+          onCloseRequest={() => setOpen(!isOpen)}
+          onMovePrevRequest={() =>
+            setPhotoIndex((photoIndex + pictures.length - 1) % pictures.length)
+          }
+          onMoveNextRequest={() =>
+            setPhotoIndex((photoIndex + 1) % pictures.length)
+          }
+        />
+      )}
     </div>
   );
 }

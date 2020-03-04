@@ -42,4 +42,17 @@ module.exports = function(app) {
       changeOrigin: true,
     })
   );
+
+  app.get(
+    '/my_profiles/52fe10ed-9096-43d9-b9db-49ccee1bb260/pictures',
+    (req, res) => {
+      res.send({
+        content: [
+          { id: 1, src: '/1.jpg' },
+          { id: 1, src: '/1.jpg' },
+          { id: 1, src: '/1.jpg' },
+        ],
+      });
+    }
+  );
 };

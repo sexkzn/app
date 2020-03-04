@@ -71,9 +71,29 @@ function GirlPage() {
           <div className="girl-page__description">
             {get(data, 'description')}
           </div>
-          <div className="girl-page__services">
-            <div className="girl-page__main-info girl-main-info">
-              <div className="girl-main-info__title">Описание:</div>
+          {/*<div className="girl-page__services">*/}
+          {/*  <div className="girl-page__main-info girl-main-info">*/}
+          {/*    <div className="girl-main-info__title">Описание:</div>*/}
+          {/*    <Ul>*/}
+          {/*      <Li>Город: Казань</Li>*/}
+          {/*      <Li>Район: Авиастроительный</Li>*/}
+          {/*      <Li>Возраст: 22</Li>*/}
+          {/*      <Li>Рост: 188</Li>*/}
+          {/*      <Li>Вес: 65</Li>*/}
+          {/*      <Li>Грудь: 3</Li>*/}
+          {/*      <Li>Цвет волос: Русая</Li>*/}
+          {/*      <Li>Внешность: Славянская</Li>*/}
+          {/*      <Li>Национальность: Русская</Li>*/}
+          {/*    </Ul>*/}
+          {/*  </div>*/}
+          {/*  <div className="girl-page__costs girl-costs">*/}
+          {/*    <div className="girl-costs__title">Стоимость</div>*/}
+          {/*  </div>*/}
+          {/*</div>*/}
+
+          <div className="girl-page__info-container">
+            <div className="girl-page__info">
+              <div className="girl-page__info-title">Описание</div>
               <Ul>
                 <Li>Город: Казань</Li>
                 <Li>Район: Авиастроительный</Li>
@@ -86,8 +106,52 @@ function GirlPage() {
                 <Li>Национальность: Русская</Li>
               </Ul>
             </div>
-            <div className="girl-page__costs girl-costs">
-              <div className="girl-costs__title">Стоимость</div>
+            <div className="girl-page__services">
+              <div className="girl-page__services-title">Услуги</div>
+              <div className="girl-page__services-list">
+                <div className="girl-page__services-category">
+                  <div className="girl-page__services-category-title">Секс</div>
+                  <div className="girl-page__services-category-list">
+                    <div className="girl-page__services-category-item">
+                      Классический
+                    </div>
+                    <div className="girl-page__services-category-item">
+                      Анальный
+                    </div>
+                  </div>
+                </div>
+
+                <div className="girl-page__services-category">
+                  <div className="girl-page__services-category-title">
+                    Ласка
+                  </div>
+                  <div className="girl-page__services-category-list">
+                    <div className="girl-page__services-category-item">
+                      С резинкой
+                    </div>
+                    <div className="girl-page__services-category-item">
+                      Без резинки
+                    </div>
+                    <div className="girl-page__services-category-item">
+                      Кунилингус
+                    </div>
+                  </div>
+                </div>
+
+                <div className="girl-page__services-category">
+                  <div className="girl-page__services-category-title">
+                    Финиш
+                  </div>
+                  <div className="girl-page__services-category-list">
+                    <div className="girl-page__services-category-item">
+                      На лицо
+                    </div>
+                    <div className="girl-page__services-category-item">
+                      На грудь
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

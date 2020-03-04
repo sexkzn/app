@@ -22,6 +22,41 @@
 
     margin-top: 2rem;
   }
+
+  &__images {
+    display: grid;
+    grid-gap: 15px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    justify-items: center;
+  }
+
+  &__image {
+    position: relative;
+
+    cursor: pointer;
+    overflow: hidden;
+
+    &:hover {
+      .add-pictures-page__image-action {
+        transform: translateY(0);
+      }
+    }
+
+    &-action {
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      width: 100%;
+
+      text-align: center;
+
+      transform: translateY(-50px);
+      transition: .5s;
+
+      background: rgba(0,0,0,0.6);
+    }
+  }
 }
 
 @media (max-width: 767px) {

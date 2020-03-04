@@ -14,7 +14,9 @@ const Api = {
   verify: '/verify',
   logout: '/logout',
   PICTURES: '/images/public/:id/upload',
+  PICTURES_DELETE: 'images/public/:id/delete',
   VERIFY_PICTURES: '/images/private/:id/upload',
+  GET_PICTURES: '/my_profiles/:id/pictures',
 };
 
 export default Api;
